@@ -16,7 +16,7 @@
 		<div class="col-md-8" style="align: center">
 		<div class="panel panel-group">
 			<div class="panel panel-default">
-			<div class="panel-heading">Company Details</div>
+			<div class="panel-heading" style="height:25px">Company Details</div>
 			<div class="panel-body">
 				<label style="float: left">Customer ID:</label>
 				<form:input class="form-control input-sm" type="text" path="cid"></form:input>
@@ -32,7 +32,7 @@
 				<form:input class="form-control input-sm" type="text" path="area"></form:input>
 			</div></div>
 			<div class="panel panel-default">
-			<div class="panel-heading" style>Owner Details</div>
+			<div class="panel-heading" style="height:25px">Owner Details</div>
 			<div class="panel-body">
 				<label style="float: left">Name:</label>
 				<form:input class="form-control input-sm" type="text" path="owname"></form:input>
