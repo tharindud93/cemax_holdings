@@ -60,7 +60,9 @@
 	<td><input type="text" class="form-control input-sm" id="tot"></td>
 </tr>
 </table>
-</div></div></div>
+</div>
+<input type="submit" class="btn btn-primary col-xs-3" value="save"/>
+</div></div>
 </form>
 </body>
 </html>
