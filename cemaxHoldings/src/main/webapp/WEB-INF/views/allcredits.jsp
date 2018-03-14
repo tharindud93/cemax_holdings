@@ -24,6 +24,7 @@
       <th scope="col">Handle</th>
     </tr>
   </thead>
+  
   <tbody>
     <tr>
       <th scope="row">1</th>
