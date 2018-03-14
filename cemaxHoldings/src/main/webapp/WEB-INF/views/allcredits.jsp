@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-<link rel='stylesheet' href='webjars/bootstrap/4.0.0/css/bootstrap.min.css'>
+<link rel='stylesheet' href='webjars/bootstrap/3.2.0/css/bootstrap.min.css'>
 
 
 
@@ -15,7 +15,7 @@
 </head>
 <body>
 	<div>
-		<table class="table table-hover table-dark">
+		<table class="table table-hover">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -51,6 +51,6 @@
 	</div>
 
 </body>
-<script type="text/javascript" src="webjars/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="webjars/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="webjars/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </html>
