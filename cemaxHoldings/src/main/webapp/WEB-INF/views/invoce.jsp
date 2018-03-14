@@ -27,7 +27,7 @@
 			<div class="panel-body">
 <br>
 <div class="table-responsive">
-<table class="table table-striped">
+<table class="table table-hover">
 <tr>
 	<th>Quantity</th>
 	<th>Description</th>
