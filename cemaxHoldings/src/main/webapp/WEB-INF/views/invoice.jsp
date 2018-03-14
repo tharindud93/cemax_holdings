@@ -10,6 +10,26 @@
 </head>
 <body style="width:80%">
 
+<!-- Modal -->
+<div id="delnoteModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Delivery Note</h4>
+      </div>
+      <div class="modal-body">
+       <%@include file="delNote.jsp" %>
+       
+
+    </div>
+</div>
+  </div>
+</div>
+<!-- <End modal> -->
+
 <form>
 <div class="panel panel-default col-md-7">
 			<div class="panel-heading">Company Details</div>
@@ -22,12 +42,13 @@
 <br>
 <label>Delivery Note No:</label>
 <input type="text" name="delnote" class="form-control input-sm" id="delnote"/>
+<button type="button" class="btn" data-toggle="modal" data-target="#delnoteModal">Add</button>
 </div></div>
-<div class="panel panel-default col-md-5">
+<!-- <div class="panel panel-default col-md-5">
 <div class="panel-body">
 <p class="col-xs-5">asd;</p>
 </div>
-</div>
+</div> -->
 <div class="panel panel-default">
 			<div class="panel-body">
 <br>

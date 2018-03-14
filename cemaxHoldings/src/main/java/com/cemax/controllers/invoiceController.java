@@ -10,8 +10,8 @@ public class invoiceController {
 	public String invoiceadd() {
 		return "invoice";
 	}
-	@RequestMapping("allcr")
-	public String allcredits() {
-		return "allcredits";
+	@RequestMapping("delnote")
+	public String adddelnote() {
+		return "delNote";
 	}
 }
