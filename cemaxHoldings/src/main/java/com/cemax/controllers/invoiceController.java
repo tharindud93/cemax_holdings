@@ -8,7 +8,7 @@ public class invoiceController {
 
 	@RequestMapping("invoice")
 	public String invoiceadd() {
-		return "invoce";
+		return "invoice";
 	}
 	@RequestMapping("allcr")
 	public String allcredits() {
