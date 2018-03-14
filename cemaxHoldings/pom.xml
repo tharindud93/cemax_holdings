@@ -26,6 +26,27 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 </dependency>
 
 <!-- end spring -->
+
+<!-- <Bootstrap & jquery> -->
+
+<dependency>
+    <groupId>org.webjars</groupId>
+    <artifactId>bootstrap</artifactId>
+    <version>3.2.0</version>
+    <exclusions>
+        <exclusion>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+        </exclusion>
+    </exclusions>
+</dependency>
+
+<dependency>
+    <groupId>org.webjars</groupId>
+    <artifactId>jquery</artifactId>
+    <version>2.1.1</version>
+</dependency>
+<!-- <End Bootstrap & jquery> -->
 <dependency>
   <groupId>javax.servlet</groupId>
   <artifactId>javax.servlet-api</artifactId>

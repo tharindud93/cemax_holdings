@@ -10,6 +10,7 @@ private String area;
 private String owname;
 private String owaddress;
 private String owcno;
+
 public String getCid() {
 	return cid;
 }
