@@ -11,7 +11,7 @@
 <body style="width:80%">
 
 <form>
-<div class="panel panel-default" style="width:60%">
+<div class="panel panel-default col-md-7">
 			<div class="panel-heading">Company Details</div>
 			<div class="panel-body">
 <label>Customer Name:</label>
@@ -23,6 +23,11 @@
 <label>Delivery Note No:</label>
 <input type="text" name="delnote" class="form-control input-sm" id="delnote"/>
 </div></div>
+<div class="panel panel-default col-md-5">
+<div class="panel-body">
+<p class="col-xs-5">asd;</p>
+</div>
+</div>
 <div class="panel panel-default">
 			<div class="panel-body">
 <br>
