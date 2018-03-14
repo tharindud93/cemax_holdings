@@ -25,14 +25,14 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
     <version>4.3.14.RELEASE</version>
 </dependency>
 
-<!-- end spring -->
+<!-- end   spring -->
 
 <!-- <Bootstrap & jquery> -->
 
 <dependency>
     <groupId>org.webjars</groupId>
     <artifactId>bootstrap</artifactId>
-    <version>4.0.0</version>
+    <version>3.2.0</version>
     <exclusions>
         <exclusion>
             <groupId>org.webjars</groupId>
@@ -44,7 +44,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 <dependency>
     <groupId>org.webjars</groupId>
     <artifactId>jquery</artifactId>
-    <version>3.2.1</version>
+    <version>2.1.1</version>
 </dependency>
 <!-- <End Bootstrap & jquery> -->
 <dependency>
