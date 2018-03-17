@@ -46,6 +46,11 @@
 
 	<div class="container">
 	
+	<div class="col-md-12" style="align: center">
+			<div class="panel panel-group">
+				<div class="panel panel-primary">
+					<div class="panel-heading">Customer Outstandings and Debits</div>
+					<div class="panel-body">
 	
 	
 <div class="input-group">
@@ -57,7 +62,7 @@
 	<br>
 	
 
-	<div class="container">
+	
 		<table class="table table-bordered">
   <thead>
     <tr>
@@ -102,6 +107,11 @@
 	
 	
 	</div>
+	</div>
+	</div>
+	</div>
+
+	
 
 </body>
 <script type="text/javascript" src="webjars/jquery/2.1.1/jquery.min.js"></script>

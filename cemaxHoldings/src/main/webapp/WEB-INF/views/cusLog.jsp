@@ -15,6 +15,12 @@
 <hr>
 
 <div class="container">
+
+<div class="col-md-12" style="align: center">
+			<div class="panel panel-group">
+				<div class="panel panel-primary">
+					<div class="panel-heading">Customer History</div>
+					<div class="panel-body">
 		<div class="col-md-5 pull-left" style="padding:0;">
 			<label>Customer Id</label> <input type="text" name="cusname"
 				class="form-control input-sm" id="cusname" value="Nawala Hardware"/>
@@ -31,7 +37,7 @@
 	<br>
 
 
-<div class="container">
+
 		
 <div class="input-group">
             <input type="text" class="form-control" placeholder="Enter search term here ( Ex:IN00123 )" name="srch-term" id="srch-term" >
@@ -40,7 +46,6 @@
             </div>
         </div>	
         
-</div>
 	<br>
 	
 	
@@ -48,7 +53,7 @@
 	
 	<!-- Table start -->
 	
-	<div class="container">
+	
 		<table class="table table-bordered">
   <thead>
     <tr>
@@ -101,6 +106,10 @@
 	
 	
 	</div>
+	</div>
+	</div>
+	</div>
+		
 	
 	<!-- Table End -->
 	
