@@ -14,6 +14,10 @@
 
 <form:form class="input-sm">
 <div class="col-md-8" style="align:center">
+<div class="panel panel-group">
+			<div class="panel panel-primary">
+			<div class="panel-heading">Register New User</div>
+			<div class="panel-body">
 <label style="float: left">User ID:</label>
 <form:input class="form-control input-sm" type="text" path="userid"></form:input>
 <label style="float: left">User Name:</label>
@@ -29,7 +33,10 @@
 <label style="float: left">Re-Enter Password:</label>
 <form:input class="form-control input-sm" type="text" path="repass"></form:input>
 <br>
-<button type="Submit" class="btn btn-info">Submit</button>
+<button type="Submit" class="btn btn-primary pull-right">Submit</button>
+</div>
+</div>
+</div>
 </div>
 </form:form>
 
