@@ -1,7 +1,3 @@
-<html>
-<link rel='stylesheet'
-	href='webjars/bootstrap/3.2.0/css/bootstrap.min.css'>
-<body>
 
 
 
@@ -78,13 +74,25 @@
 
 	<div class="row">
 		<div class="col-md-5 col-md-push-7">
-			<button type="button" id="btndelnote"
-				class="btn btn-success btn-block">Save</button>
+			<button type="button" id="btndelnote" class="btn btn-success btn-block" data-toggle="modal" href="#authModal">Save</button>
 		</div>
 	</div>
 
-</body>
-<script type="text/javascript" src="webjars/jquery/2.1.1/jquery.min.js"></script>
-<script type="text/javascript"
-	src="webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-</html>
+	
+	
+ <!-- Modal -->
+	<div id="authModal" class="modal fade" role="dialog" >
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					<%@include file="debitauth.jsp"%>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- <End modal> --> 

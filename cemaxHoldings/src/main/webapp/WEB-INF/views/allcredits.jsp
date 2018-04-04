@@ -12,7 +12,7 @@
 
 <!----- Modal ------>
 <div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog" style="width:80%">
+<div class="modal-dialog" style="width:80%">
 
     <!-- Modal content-->
     <div class="modal-content">
@@ -56,7 +56,7 @@
 <div class="input-group">
             <input type="text" class="form-control" placeholder="Enter Customer Name" name="srch-term" id="srch-term">
             <div class="input-group-btn">
-                <button class="btn btn-primary btn-md" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                <button class="btn btn-primary btn-md" type="submit" style="height:34px"><i class="glyphicon glyphicon-search"></i></button>
             </div>
         </div>	</div>
 	<br>

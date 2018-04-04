@@ -82,7 +82,7 @@
 						<tr class="warning">
 							<th scope="row">11-12-2018</th>
 							<td>IN00021</td>
-							<td>CU-005</td>
+							<td>CU-010</td>
 							<td>Pathirana hardware</td>
 							<td>(20000)</td>
 							<td>2</td>
@@ -93,7 +93,7 @@
 						<tr class="success">
 							<th scope="row">03-03-2018</th>
 							<td>IN00022</td>
-							<td>CU-005</td>
+							<td>CU-008</td>
 							<td>Nimal hardware</td>
 							<td>(30000)</td>
 							<td>7</td>
@@ -103,7 +103,7 @@
 						<tr>
 							<th scope="row">03-12-2018</th>
 							<td>IN00023</td>
-							<td>CU-005</td>
+							<td>CU-009</td>
 							<td>Priyantha hardware</td>
 							<td>(40000)</td>
 							<td>12</td>
@@ -114,7 +114,7 @@
 						<tr>
 							<th scope="row">24-11-2018</th>
 							<td>IN00020</td>
-							<td>CU-005</td>
+							<td>CU-023</td>
 							<td>Athula hardware</td>
 							<td>(20000)</td>
 							<td>10</td>
@@ -125,8 +125,8 @@
 						<tr>
 							<th scope="row">11-12-2018</th>
 							<td>IN00021</td>
-							<td>CU-005</td>
-							<td>Pathirana hardware</td>
+							<td>CU-019</td>
+							<td>CX hardware</td>
 							<td>(20000)</td>
 							<td>10</td>
 							<td><button class="btn btn-success btn-xs" type="button"
@@ -136,8 +136,8 @@
 						<tr >
 							<th scope="row">03-03-2018</th>
 							<td>IN00022</td>
-							<td>CU-005</td>
-							<td>Nimal hardware</td>
+							<td>CU-019</td>
+							<td>CX hardware</td>
 							<td>(30000)</td>
 							<td>10</td>
 							<td><button class="btn btn-success btn-xs" type="button"
@@ -146,8 +146,8 @@
 						<tr>
 							<th scope="row">03-12-2018</th>
 							<td>IN00023</td>
-							<td>CU-005</td>
-							<td>Priyantha hardware</td>
+							<td>CU-021</td>
+							<td>Alan hardware</td>
 							<td>80000</td>
 							<td>08</td>
 							<td><button class="btn btn-success btn-xs" type="button"

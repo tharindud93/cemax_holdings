@@ -1,6 +1,6 @@
 
 	<form>
-	<div class="panel panel-group">
+	
 		<div class="panel panel-primary col-md-7">
 			<div class="panel-heading">Company Details</div>
 			<div class="panel-body">

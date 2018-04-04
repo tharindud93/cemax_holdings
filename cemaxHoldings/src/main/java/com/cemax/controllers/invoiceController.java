@@ -23,4 +23,8 @@ public class invoiceController {
 	public String viewinvoice() {
 		return "viewinvoice";
 	}
+	@RequestMapping("debauth")
+	public String authdebit() {
+		return "debitauth";
+	}
 }
