@@ -19,4 +19,8 @@ public class invoiceController {
 		return "allinvoices";
 		
 	}
+	@RequestMapping("viewinv")
+	public String viewinvoice() {
+		return "viewinvoice";
+	}
 }

@@ -10,6 +10,22 @@
 
 <title>All Invoices</title>
 </head>
+<!-- Modal -->
+	<div id="invModal" class="modal fade" role="dialog">
+		<div class="modal-dialog" style="width:80%">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					<%@include file="viewinvoice.jsp"%>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- <End modal> -->
 
 <div class="col-md-12" style="align: center">
 	
@@ -44,7 +60,8 @@
 							<th scope="col">Invoice No</th>
 							<th scope="col">Customer Id</th>
 							<th scope="col">C. Name</th>
-							<th scope="col">Remain</th>
+							<th scope="col">Value</th>
+							<th scope="col">Remain(days)</th>
 							<th scope="col">Action</th>
 
 						</tr>
@@ -57,8 +74,9 @@
 							<td>CU-005</td>
 							<td>Athula hardware</td>
 							<td>(50000)</td>
+							<td>-2</td>
 							<td><button class="btn btn-success btn-xs" type="button"
-									data-toggle="modal" data-target="#myModal">View</button>
+									data-toggle="modal" data-target="#invModal">View</button>
 						</tr>
 
 						<tr class="warning">
@@ -67,6 +85,7 @@
 							<td>CU-005</td>
 							<td>Pathirana hardware</td>
 							<td>(20000)</td>
+							<td>2</td>
 							<td><button class="btn btn-success btn-xs" type="button"
 									data-toggle="modal" data-target="#myModal">View</button>
 						</tr>
@@ -77,6 +96,7 @@
 							<td>CU-005</td>
 							<td>Nimal hardware</td>
 							<td>(30000)</td>
+							<td>7</td>
 							<td><button class="btn btn-success btn-xs" type="button"
 									data-toggle="modal" data-target="#myModal">View</button>
 						</tr>
@@ -86,6 +106,7 @@
 							<td>CU-005</td>
 							<td>Priyantha hardware</td>
 							<td>(40000)</td>
+							<td>12</td>
 							<td><button class="btn btn-success btn-xs" type="button"
 									data-toggle="modal" data-target="#myModal">View</button>
 						</tr>
@@ -95,7 +116,8 @@
 							<td>IN00020</td>
 							<td>CU-005</td>
 							<td>Athula hardware</td>
-							<td>(50000)</td>
+							<td>(20000)</td>
+							<td>10</td>
 							<td><button class="btn btn-success btn-xs" type="button"
 									data-toggle="modal" data-target="#myModal">View</button>
 						</tr>
@@ -106,6 +128,7 @@
 							<td>CU-005</td>
 							<td>Pathirana hardware</td>
 							<td>(20000)</td>
+							<td>10</td>
 							<td><button class="btn btn-success btn-xs" type="button"
 									data-toggle="modal" data-target="#myModal">View</button>
 						</tr>
@@ -116,6 +139,7 @@
 							<td>CU-005</td>
 							<td>Nimal hardware</td>
 							<td>(30000)</td>
+							<td>10</td>
 							<td><button class="btn btn-success btn-xs" type="button"
 									data-toggle="modal" data-target="#myModal">View</button>
 						</tr>
@@ -124,7 +148,8 @@
 							<td>IN00023</td>
 							<td>CU-005</td>
 							<td>Priyantha hardware</td>
-							<td>(40000)</td>
+							<td>80000</td>
+							<td>08</td>
 							<td><button class="btn btn-success btn-xs" type="button"
 									data-toggle="modal" data-target="#myModal">View</button>
 						</tr>
