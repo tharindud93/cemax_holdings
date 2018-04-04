@@ -13,7 +13,7 @@
 
 	<!-- Modal -->
 	<div id="delnoteModal" class="modal fade" role="dialog">
-		<div class="modal-dialog">
+		<div class="modal-dialog" style="width:80%">
 
 			<!-- Modal content-->
 			<div class="modal-content">
@@ -23,8 +23,6 @@
 				</div>
 				<div class="modal-body">
 					<%@include file="delNote.jsp"%>
-
-
 				</div>
 			</div>
 		</div>
@@ -104,8 +102,6 @@
 	
 	-->
 	<div class="container">
-	
-	<h1>Add New Invoice</h1>
 	</div>
 	<form:form class="input-sm">
 		<div class="col-md-12" style="align: center">

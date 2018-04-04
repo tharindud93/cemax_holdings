@@ -14,4 +14,9 @@ public class invoiceController {
 	public String adddelnote() {
 		return "delNote";
 	}
+	@RequestMapping("allinv")
+	public String allinvoices() {
+		return "allinvoices";
+		
+	}
 }
