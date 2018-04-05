@@ -1,4 +1,4 @@
-
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
@@ -7,11 +7,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-<link rel='stylesheet'
-	href='webjars/bootstrap/3.2.0/css/bootstrap.min.css'>
+
+
 <title>addCoustomer</title>
 </head>
 <body bgcolor="red">
+ <tiles:insertDefinition name="defaultTemplate">
+	<tiles:putAttribute name="body">
+
 
 	<form:form class="input-sm">
 		<div class="col-md-8" style="align: center">
@@ -58,11 +61,8 @@
 			</div>
 			</div></div>
 	</form:form>
-	
-	
-	<script type="text/javascript"
-					src="webjars/jquery/2.1.1/jquery.min.js"></script>
-				<script type="text/javascript"
-					src="webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</tiles:putAttribute>
+</tiles:insertDefinition>
 
 </body>
+<script src="<c:url value="/resources/js/nav_bar_span.js" />"></script> 

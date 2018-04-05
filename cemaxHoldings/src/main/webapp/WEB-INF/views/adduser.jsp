@@ -1,16 +1,16 @@
-
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
 <html>
 <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel='stylesheet' href='webjars/bootstrap/3.2.0/css/bootstrap.min.css'>
 <title>adduser</title>
 </head>
-<body bgcolor="red">
+ <tiles:insertDefinition name="defaultTemplate">
+	<tiles:putAttribute name="body">
+
 
 <form:form class="input-sm">
 <div class="col-md-8" style="align:center">
@@ -41,8 +41,9 @@
 </form:form>
 
 
+</tiles:putAttribute>
+</tiles:insertDefinition>
 
-
-
+<script src="<c:url value="/resources/js/nav_bar_span.js" />"></script> 
 
 </body>
