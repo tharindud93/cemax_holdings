@@ -11,8 +11,7 @@
 
 <title>All Invoices</title>
 </head>
- <tiles:insertDefinition name="defaultTemplate">
-	<tiles:putAttribute name="body">
+
 <!-- Modal -->
 	<div id="invModal" class="modal fade" role="dialog">
 		<div class="modal-dialog" style="width:80%">
@@ -30,14 +29,13 @@
 	</div>
 	<!-- <End modal> -->
 
-<div class="col-md-12" style="align: center">
-	
+ <tiles:insertDefinition name="defaultTemplate">
+	<tiles:putAttribute name="body">
+	<div class="col-md-12" style="align: center">
 			<div class="panel panel-primary">
 				<div class="panel-heading">All Invioces</div>
 				<div class="col-md-5">
-					<!-- <input type="text" class="form-control" placeholder="Search here ( Ex:IN00123 )" name="srch-term" id="srch-term">
-					<button class="btn btn-primary btn-md" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-				 -->
+				
 				 <br>
 				 <div class="input-group">
   						<input type="text" class="form-control" placeholder="Search here ( Ex:IN00123 )">
@@ -49,7 +47,7 @@
 					</div>
 					<br>
 				 </div>
-</div>
+
 
 				<br>
 
@@ -160,9 +158,9 @@
 					</tbody>
 				</table>
 
-
-
-			</div>
+</div>
+</div>
+		
 
 
 		

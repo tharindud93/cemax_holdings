@@ -53,8 +53,8 @@
 	
 	<!-- Table start -->
 	
-	
-		<table class="table table-bordered">
+	<div class="table table-responsive">
+		<table class="table table-bordered" style="width:80%">
   <thead>
     <tr>
       <th scope="col">Date</th>
@@ -103,7 +103,7 @@
   </tbody>
 </table>
 		
-	
+	</div>
 	
 	</div>
 	</div>
