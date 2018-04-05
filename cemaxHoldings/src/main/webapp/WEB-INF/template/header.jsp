@@ -24,7 +24,7 @@
 		<div style="float: right">
 			<span id="span" class="col-md-1"
 				style="font-size: 20px; cursor: pointer; float: left; padding-left: 15px; padding-top: 12px">
-				<button class="btn" onclick="">LOGOUT</button>
+				<a href="/cemaxHoldings/" class="btn btn-warning">LOGOUT</a>
 			</span>
 
 		</div>

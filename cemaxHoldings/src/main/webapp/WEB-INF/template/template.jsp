@@ -60,9 +60,7 @@
     text-align: center;
 }
 
-.mySidenav{
-	width:15%
-}
+
 </style>
 </head>
 
