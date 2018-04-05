@@ -1,18 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-<link rel='stylesheet' href='webjars/bootstrap/3.2.0/css/bootstrap.min.css'>
+
 
 <title>Overall Credits</title>
 </head>
 
 <!----- Modal ------>
 <div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog" style="width:80%">
+<div class="modal-dialog" style="width:80%">
 
     <!-- Modal content-->
     <div class="modal-content">
@@ -31,19 +32,11 @@
   </div>
 </div>
 
-
 <!-- End Modal -->
 
-
-
-
-
-
-<body>`
-
-
-
-
+<body>
+ <tiles:insertDefinition name="defaultTemplate">
+	<tiles:putAttribute name="body">
 	<div class="container">
 	
 	<div class="col-md-12" style="align: center">
@@ -56,7 +49,7 @@
 <div class="input-group">
             <input type="text" class="form-control" placeholder="Enter Customer Name" name="srch-term" id="srch-term">
             <div class="input-group-btn">
-                <button class="btn btn-primary btn-md" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                <button class="btn btn-primary btn-md" type="submit" style="height:34px"><i class="glyphicon glyphicon-search"></i></button>
             </div>
         </div>	</div>
 	<br>
@@ -110,10 +103,10 @@
 	</div>
 	</div>
 	</div>
-
+</tiles:putAttribute>
+</tiles:insertDefinition>
 	
-
+<script src="<c:url value="/resources/js/nav_bar_span.js" />"></script> 
 </body>
-<script type="text/javascript" src="webjars/jquery/2.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
 </html>

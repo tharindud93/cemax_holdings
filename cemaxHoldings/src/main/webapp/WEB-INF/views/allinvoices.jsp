@@ -1,3 +1,4 @@
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -6,10 +7,28 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
 <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-<link rel='stylesheet' href='webjars/bootstrap/3.2.0/css/bootstrap.min.css'>
+
 
 <title>All Invoices</title>
 </head>
+ <tiles:insertDefinition name="defaultTemplate">
+	<tiles:putAttribute name="body">
+<!-- Modal -->
+	<div id="invModal" class="modal fade" role="dialog">
+		<div class="modal-dialog" style="width:80%">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					<%@include file="viewinvoice.jsp"%>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- <End modal> -->
 
 <div class="col-md-12" style="align: center">
 	
@@ -44,7 +63,8 @@
 							<th scope="col">Invoice No</th>
 							<th scope="col">Customer Id</th>
 							<th scope="col">C. Name</th>
-							<th scope="col">Remain</th>
+							<th scope="col">Value</th>
+							<th scope="col">Remain(days)</th>
 							<th scope="col">Action</th>
 
 						</tr>
@@ -57,16 +77,18 @@
 							<td>CU-005</td>
 							<td>Athula hardware</td>
 							<td>(50000)</td>
+							<td>-2</td>
 							<td><button class="btn btn-success btn-xs" type="button"
-									data-toggle="modal" data-target="#myModal">View</button>
+									data-toggle="modal" data-target="#invModal">View</button>
 						</tr>
 
 						<tr class="warning">
 							<th scope="row">11-12-2018</th>
 							<td>IN00021</td>
-							<td>CU-005</td>
+							<td>CU-010</td>
 							<td>Pathirana hardware</td>
 							<td>(20000)</td>
+							<td>2</td>
 							<td><button class="btn btn-success btn-xs" type="button"
 									data-toggle="modal" data-target="#myModal">View</button>
 						</tr>
@@ -74,18 +96,20 @@
 						<tr class="success">
 							<th scope="row">03-03-2018</th>
 							<td>IN00022</td>
-							<td>CU-005</td>
+							<td>CU-008</td>
 							<td>Nimal hardware</td>
 							<td>(30000)</td>
+							<td>7</td>
 							<td><button class="btn btn-success btn-xs" type="button"
 									data-toggle="modal" data-target="#myModal">View</button>
 						</tr>
 						<tr>
 							<th scope="row">03-12-2018</th>
 							<td>IN00023</td>
-							<td>CU-005</td>
+							<td>CU-009</td>
 							<td>Priyantha hardware</td>
 							<td>(40000)</td>
+							<td>12</td>
 							<td><button class="btn btn-success btn-xs" type="button"
 									data-toggle="modal" data-target="#myModal">View</button>
 						</tr>
@@ -93,9 +117,10 @@
 						<tr>
 							<th scope="row">24-11-2018</th>
 							<td>IN00020</td>
-							<td>CU-005</td>
+							<td>CU-023</td>
 							<td>Athula hardware</td>
-							<td>(50000)</td>
+							<td>(20000)</td>
+							<td>10</td>
 							<td><button class="btn btn-success btn-xs" type="button"
 									data-toggle="modal" data-target="#myModal">View</button>
 						</tr>
@@ -103,9 +128,10 @@
 						<tr>
 							<th scope="row">11-12-2018</th>
 							<td>IN00021</td>
-							<td>CU-005</td>
-							<td>Pathirana hardware</td>
+							<td>CU-019</td>
+							<td>CX hardware</td>
 							<td>(20000)</td>
+							<td>10</td>
 							<td><button class="btn btn-success btn-xs" type="button"
 									data-toggle="modal" data-target="#myModal">View</button>
 						</tr>
@@ -113,18 +139,20 @@
 						<tr >
 							<th scope="row">03-03-2018</th>
 							<td>IN00022</td>
-							<td>CU-005</td>
-							<td>Nimal hardware</td>
+							<td>CU-019</td>
+							<td>CX hardware</td>
 							<td>(30000)</td>
+							<td>10</td>
 							<td><button class="btn btn-success btn-xs" type="button"
 									data-toggle="modal" data-target="#myModal">View</button>
 						</tr>
 						<tr>
 							<th scope="row">03-12-2018</th>
 							<td>IN00023</td>
-							<td>CU-005</td>
-							<td>Priyantha hardware</td>
-							<td>(40000)</td>
+							<td>CU-021</td>
+							<td>Alan hardware</td>
+							<td>80000</td>
+							<td>08</td>
 							<td><button class="btn btn-success btn-xs" type="button"
 									data-toggle="modal" data-target="#myModal">View</button>
 						</tr>
@@ -141,10 +169,7 @@
 	
 	<!-- Table End -->
 	
-<body>
-
-</body>
-
-<script type="text/javascript" src="webjars/jquery/2.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</tiles:putAttribute>
+</tiles:insertDefinition>
+<script src="<c:url value="/resources/js/nav_bar_span.js" />"></script> 
 </html>

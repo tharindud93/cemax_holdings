@@ -1,1 +1,8 @@
+com\cemax\domain\User.class
 com\cemax\controllers\loginController.class
+com\cemax\domain\Customer.class
+com\cemax\controllers\allcreditsController.class
+com\cemax\controllers\invoiceController.class
+com\cemax\controllers\userController.class
+com\cemax\controllers\cusLogController.class
+com\cemax\controllers\customerController.class

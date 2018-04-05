@@ -19,4 +19,12 @@ public class invoiceController {
 		return "allinvoices";
 		
 	}
+	@RequestMapping("viewinv")
+	public String viewinvoice() {
+		return "viewinvoice";
+	}
+	@RequestMapping("debauth")
+	public String authdebit() {
+		return "debitauth";
+	}
 }
