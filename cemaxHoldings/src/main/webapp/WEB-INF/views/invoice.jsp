@@ -101,9 +101,11 @@
 	</form>
 	
 	-->
+
+	
 	<div class="container">
 	</div>
-	<form:form class="input-sm">
+	<form class="input-sm">
 		<div class="col-md-12" style="align: center">
 			<div class="panel panel-group">
 				<div class="panel panel-primary">
@@ -138,58 +140,55 @@
 							<th>Unit Price</th>
 							<th>Amount</th>
 						</tr>
-						<tr>
-							<td><input type="text" class="form-control input-sm" id="q1"></td>
+						<tr> 
+							<td><input type="text" class="form-control input-sm" id="qun1"/></td>
 							<td>UltraTech (OPC) Cement 50Kg</td>
-							<td><input type="text" class="form-control input-sm"
-								id="up1"></td>
-							<td><input type="text" class="form-control input-sm"
-								id="am1"></td>
+							<td><input type="text" class="form-control input-sm" id="unip1"></td>
+							<td><input type="text" class="form-control input-sm" id="amoun1"></td>
 						</tr>
 						<tr>
-							<td><input type="text" class="form-control input-sm" id="q2"></td>
+							<td><input type="text" class="form-control input-sm" id="qun2"></td>
 							<td>UltraTech (PPC) Cement 50Kg</td>
-							<td><input type="text" class="form-control input-sm"
-								id="up2"></td>
-							<td><input type="text" class="form-control input-sm"
-								id="am2"></td>
+							<td><input type="text" class="form-control input-sm" id="unip2"></td>
+							<td><input type="text" class="form-control input-sm" id="amoun2"></td>
 						</tr>
 
 						<tr>
+						
 							<td></td>
 							<td>Transport Chargers</td>
-							<td><input type="text" class="form-control input-sm"
-								id="up3"></td>
-							<td><input type="text" class="form-control input-sm"
-								id="am3"></td>
+							<td><input type="hidden" class="form-control input-sm" id="unip3"></td>
+							<td><input type="text" class="form-control input-sm" id="amoun3"></td>
 						</tr>
 						<tr>
 							<td colspan="2"></td>
-							<td><button type="button" id="btntot"
-									class="btn btn-success" style="float: right; width: 100%">Total</button></td>
-							<td><input type="text" class="form-control input-sm"
-								id="tot"></td>
+							<td><button type="button" id="btntot" class="btn btn-success" style="float: right; width: 100%" onclick="total()">Total</button></td>
+							<td><input type="text" class="form-control input-sm" id="totl"></td>
 						</tr>
 					</table>
-					
-					
+						
 				</div>
 				<input type="submit" class="btn btn-primary col-xs-3" value="save" />
+			
+				</div></div></div></div>
+				</form>
 				
 				
-				
-				
-				
-				
-				</div>
-				</form:form>
-				
-				
-
-
-				<script type="text/javascript"
-					src="webjars/jquery/2.1.1/jquery.min.js"></script>
-				<script type="text/javascript"
-					src="webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
+<script>
+function total(){
+	var qunt1=document.getElementById('qun1').value;
+	var unitp1=document.getElementById('unip1').value;
+	var amount1=document.getElementById('amoun1').value= qunt1*unitp1;
+	var qunt2=document.getElementById('qun2').value;
+	var unitp2=document.getElementById('unip2').value;
+	var amount2=document.getElementById('amoun2').value=qunt2*unitp2;
+	var amount3=document.getElementById('amoun3').value*1;
+	var amm=amount1+amount2;
+	var total=document.getElementById('totl').value=amm+amount3;
+	//qunt1*unitp1=amount1;
+}
+</script>
+<script type="text/javascript" src="webjars/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </html>
