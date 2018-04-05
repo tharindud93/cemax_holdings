@@ -107,22 +107,16 @@
 
 
 	<form class="input-sm">
-		<div class="col-md-12" style="align: center">
+		<div class="col-md-12" >
 			<div class="panel panel-group">
 				<div class="panel panel-primary">
-					<div class="panel-heading">Customer Details</div>
+					<div class="panel-heading">Seller Details</div>
 					<div class="panel-body">
 
-						<label>Customer Name:</label> <input type="text"
-							class="form-control input-sm" name="cname" /> <br> <label>Customer
-							Address:</label> <input type="text" class="form-control input-sm"
-							name="caddress" /> <br> <label>Delivery Note No:</label> <input
-							type="text" name="delnote" class="form-control input-sm"
-							id="delnote" />
-							
-							<br>
-						<button type="button" class="btn btn-success" data-toggle="modal"
-							data-target="#delnoteModal">Add</button>
+						<label>Seller Name:</label> 
+						<input type="text" class="form-control input-sm" name="cname" /> <br>
+						 <label>Seller Address:</label> 
+						 <input type="text" class="form-control input-sm" name="cadd" /> <br>
 					</div>
 				</div>
 				</div>
@@ -130,7 +124,7 @@
 				
 				<div class="panel panel-group">
 				<div class="panel panel-primary">
-					<div class="panel-heading">Invoice Details</div>
+					<div class="panel-heading">Inventry Details</div>
 					<div class="panel-body">
 						
 						<div class="table-responsive">
@@ -138,7 +132,7 @@
 						<tr>
 							<th>Quantity</th>
 							<th>Description</th>
-							<th>Unit Price</th>
+							<th>Unit Price(BUY)</th>
 							<th>Amount</th>
 						</tr>
 						<tr> 

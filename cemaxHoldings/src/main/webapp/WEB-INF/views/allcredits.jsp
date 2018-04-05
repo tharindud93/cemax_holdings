@@ -33,7 +33,23 @@
 </div>
 
 <!-- End Modal -->
+<!-- Modal -->
+	<div id="logModal" class="modal fade" role="dialog">
+		<div class="modal-dialog" style="width:80%">
 
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Customer</h4>
+				</div>
+				<div class="modal-body">
+					<%@include file="cusLog.jsp"%>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- <End modal> -->
 <body>
  <tiles:insertDefinition name="defaultTemplate">
 	<tiles:putAttribute name="body">
@@ -74,7 +90,7 @@
       <td>100000</td>
     
       <td><button class="btn btn-success btn-xs" type="button" data-toggle="modal" data-target="#myModal">Debits</button>
-      <button class="btn btn-primary btn-xs" type="button" value="Submit">Log</button></td>
+      <button class="btn btn-primary btn-xs" type="button"  data-toggle="modal" data-target="#logModal">Log</button></td>
     </tr>
     <tr>
       <th scope="row">2</th>

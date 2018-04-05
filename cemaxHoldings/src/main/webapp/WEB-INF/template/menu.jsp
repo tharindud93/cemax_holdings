@@ -22,8 +22,8 @@
 			<li><a class="navbar-nav" href="/cemaxHoldings/allcredits">Outstandings and Debits</a></li>
 			<li><a class="navbar-nav" href="/cemaxHoldings/allinv">All Invoices</a></li>
 			<li><a class="navbar-nav" href="/cemaxHoldings/allcredits">Credits</a></li>
-			<li><a class="navbar-nav" href="/cemaxHoldings/"></a></li>
-			<li><a class="navbar-nav" href="/cemaxHoldings/"></a></li>
+			<li><a class="navbar-nav" href="/cemaxHoldings/dinventry">Daily Inventry</a></li>
+			<li><a class="navbar-nav" href="/cemaxHoldings/dsum">Daily Summary</a></li>
 			<li><a class="navbar-nav" href="/cemaxHoldings/"></a></li>
 			</ul>
 		</div>
