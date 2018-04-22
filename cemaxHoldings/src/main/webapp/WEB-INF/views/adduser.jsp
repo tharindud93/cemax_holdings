@@ -33,7 +33,7 @@
 <label style="float: left">Re-Enter Password:</label>
 <form:input class="form-control input-sm" type="text" path="repass"></form:input>
 <br>
-<button type="Submit" class="btn btn-primary pull-right">Submit</button>
+<button type="Submit" class="btn btn-primary pull-right" onclick="alert('happy new year!!')">Submit</button>
 </div>
 </div>
 </div>

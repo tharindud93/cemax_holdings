@@ -16,7 +16,7 @@
 	<tiles:putAttribute name="body">
 
 
-	<form:form class="input-sm">
+	<form:form class="input-sm" action="addcustomerprocess" modelAttribute="customer">
 		<div class="col-md-8" style="align: center">
 		<div class="panel panel-group">
 			<div class="panel panel-primary">

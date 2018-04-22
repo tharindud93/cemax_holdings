@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="initial-scale=1, maximum-scale=1">
 
-<title>Invoice</title>
+<title>Daily Inventry</title>
 </head>
 <body >
 
