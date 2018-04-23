@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+	<persistence-unit name="trainingPU" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		
+		
+		<properties>
+			
+			
+          <!--    <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" /> 
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://10.0.0.5:5555/CREDITDB?currentSchema=cr_app" /> 
+            <property name="javax.persistence.jdbc.user" value="cradmin" /> 
+            <property name="javax.persistence.jdbc.password" value="cradmin" /> 
+      		<property name="hibernate.default_schema" value="cr_app"/>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/> --> 
+			
+			 <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/cemaxdb?autoReconnect=true"/>
+			<property name="hibernate.connection.username" value="root"/>
+			<property name="hibernate.connection.password" value=""/>	
+			
+							
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true"/>
+			<property name="hibernate.use_sql_comments" value="true"/>            			
+            <property name="hibernate.cache.provider_class" value="org.hibernate.cache.HashtableCacheProvider"/>
+            <property name="hibernate.archive.autodetection" value="class, hbm"/>			
+			<property name="hibernate.connection.release_mode" value="auto"/>
+            <property name="hibernate.connection.provider_class" value="org.hibernate.connection.C3P0ConnectionProvider"/>
+            <property name="hibernate.max_statements" value="100"/>
+            <property name="hibernate.c3p0.acquire_increment" value="5"/>
+            <property name="hibernate.c3p0.idleConnectionTestPeriod" value="14400"/>              
+            <property name="hibernate.c3p0.min_size" value="5"/>
+            <property name="hibernate.c3p0.max_size" value="20"/>
+            <property name="hibernate.c3p0.timeout" value="25200"/>
+            
+             <!-- batching size -->
+            <property name="hibernate.jdbc.batch_size" value="30"/>
+            <property name="hibernate.order_inserts" value="true"/>
+            <property name="hibernate.order_updates" value="true"/>
+            <property name="hibernate.jdbc.batch_versioned_data" value="true"/>
+        
+           
+            <!--<property name="hibernate.c3p0.connectionTesterClassName" value="com.mysql.jdbc.integration.c3p0.MysqlConnectionTester"/>  -->  
+			<property name="hibernate.hbm2ddl.auto" value="update" />			
+		</properties>
+		
+	</persistence-unit>
+</persistence>
+
