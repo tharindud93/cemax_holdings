@@ -1,14 +1,29 @@
 package com.cemax.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity(name="customer")
 public class Customer {
+@Id
+@Column
 private String cid;
+@Column
 private String cname;
+@Column
 private String caddress;
+@Column
 private int ccno1;
+@Column
 private int ccno2;
+@Column
 private String area;
+@Column
 private String owname;
+@Column
 private String owaddress;
+@Column
 private String owcno;
 
 public String getCid() {
