@@ -14,9 +14,12 @@
 <body bgcolor="red">
  <tiles:insertDefinition name="defaultTemplate">
 	<tiles:putAttribute name="body">
+<c:if test="${param.addsuccess eq true}">
+		<div class="alert alert-success">Customer is added Successfully!
+		</div>
+		</c:if>
 
-
-	<form:form class="input-sm">
+	<form:form class="input-sm"  action="/cemaxHoldings/addcustomerpro" modelAttribute="customer">
 		<div class="col-md-8" style="align: center">
 		<div class="panel panel-group">
 			<div class="panel panel-primary">
@@ -65,4 +68,3 @@
 </tiles:insertDefinition>
 
 </body>
-<script src="<c:url value="/resources/js/nav_bar_span.js" />"></script> 

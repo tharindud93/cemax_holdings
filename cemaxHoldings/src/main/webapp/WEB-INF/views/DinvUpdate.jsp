@@ -109,16 +109,7 @@
 	<form class="input-sm">
 		<div class="col-md-12" >
 			<div class="panel panel-group">
-				<div class="panel panel-primary">
-					<div class="panel-heading">Seller Details</div>
-					<div class="panel-body">
 
-						<label>Seller Name:</label> 
-						<input type="text" class="form-control input-sm" name="cname" /> <br>
-						 <label>Seller Address:</label> 
-						 <input type="text" class="form-control input-sm" name="cadd" /> <br>
-					</div>
-				</div>
 				</div>
 				
 				
@@ -133,18 +124,21 @@
 							<th>Quantity</th>
 							<th>Description</th>
 							<th>Unit Price(BUY)</th>
+							<th>Margin</th>
 							<th>Amount</th>
 						</tr>
 						<tr> 
 							<td><input type="text" class="form-control input-sm" id="qun1"/></td>
 							<td>UltraTech (OPC) Cement 50Kg</td>
 							<td><input type="text" class="form-control input-sm" id="unip1"></td>
+							<td><input type="text" class="form-control input-sm" id="mar1"></td>
 							<td><input type="text" class="form-control input-sm" id="amoun1"></td>
 						</tr>
 						<tr>
 							<td><input type="text" class="form-control input-sm" id="qun2"></td>
 							<td>UltraTech (PPC) Cement 50Kg</td>
 							<td><input type="text" class="form-control input-sm" id="unip2"></td>
+							<td><input type="text" class="form-control input-sm" id="mar1"></td>
 							<td><input type="text" class="form-control input-sm" id="amoun2"></td>
 						</tr>
 
@@ -152,11 +146,13 @@
 						
 							<td></td>
 							<td>Transport Chargers</td>
+							<td></td>
 							<td><input type="hidden" class="form-control input-sm" id="unip3"></td>
 							<td><input type="text" class="form-control input-sm" id="amoun3"></td>
 						</tr>
 						<tr>
 							<td colspan="2"></td>
+							<td></td>
 							<td><button type="button" id="btntot" class="btn btn-success" style="float: right; width: 100%" onclick="total()">Total</button></td>
 							<td><input type="text" class="form-control input-sm" id="totl"></td>
 						</tr>

@@ -44,6 +44,5 @@
 </tiles:putAttribute>
 </tiles:insertDefinition>
 
-<script src="<c:url value="/resources/js/nav_bar_span.js" />"></script> 
 
 </body>
