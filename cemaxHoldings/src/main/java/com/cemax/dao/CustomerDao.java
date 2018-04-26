@@ -1,12 +1,15 @@
 package com.cemax.dao;
 
+import java.util.List;
+
 import com.cemax.domain.Customer;
 
 public interface CustomerDao {
 
 	public int addCustomer(Customer customer);
-	public Customer getCustomerById(int id);
-	public int deleteCustomer(int id);
-	public int updateCustomer(int id);
+	public Customer getCustomerById(String id);
+	public int deleteCustomer(String id);
+	public int updateCustomer(Customer customer);
+	public List<Customer> Allcustomer(); 
 	
 }

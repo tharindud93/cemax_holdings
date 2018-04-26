@@ -1,12 +1,13 @@
 package com.cemax.dao.Impl;
 
-import javax.management.Query;
+
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.cemax.dao.CustomerDao;
 import com.cemax.domain.Customer;
@@ -29,22 +30,41 @@ public class CustomerDaoImpl implements CustomerDao {
 	}
 
 	@Override
-	public Customer getCustomerById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Customer getCustomerById(String id) {
+		Customer customer;
+		customer=entityManager.find(Customer.class, id);
+		//customer=(Customer) entityManager.createQuery("SELECT c FROM customer c WHERE c.id=:cid").setParameter("cid", id).getSingleResult();
+		return customer;
 	}
 
 	@Override
-	public int deleteCustomer(int id) {
+	public int deleteCustomer(String id) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int updateCustomer(int id) {
-		// TODO Auto-generated method stub
+	public int updateCustomer(Customer cu) {
+		Customer customer=entityManager.find(Customer.class,cu.getCid());
+		customer.setArea(cu.getArea());
+		customer.setCaddress(cu.getCaddress());
+		customer.setCcno1(cu.getCcno1());
+		customer.setCcno2(cu.getCcno2());
+		customer.setCname(cu.getCname());
+		customer.setOwaddress(cu.getOwaddress());
+		customer.setOwcno(cu.getOwcno());
+		customer.setOwname(cu.getOwname());
 		return 0;
 	}
+
+
+	@Override
+	public List<Customer> Allcustomer() {
+		List<Customer> customers;
+		customers=entityManager.createQuery("SELECT c FROM customer C").getResultList();
+		return customers;
+	}
+	
 }
 	
 	

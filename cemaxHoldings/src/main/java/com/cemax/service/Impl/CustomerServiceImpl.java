@@ -1,5 +1,7 @@
 package com.cemax.service.Impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
@@ -24,18 +26,23 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public Customer getCustomerById(int id) {
+	public Customer getCustomerById(String id) {
 		return customerdao.getCustomerById(id);
 	}
 
 	@Override
-	public int deleteCustomer(int id) {
+	public int deleteCustomer(String id) {
 		return customerdao.deleteCustomer(id);
 	}
 
 	@Override
-	public int updateCustomer(int id) {
-		return customerdao.updateCustomer(id);
+	public int updateCustomer(Customer customer) {
+		return customerdao.updateCustomer(customer);
+	}
+
+	@Override
+	public List<Customer> Allcustomer() {
+		return customerdao.Allcustomer();
 	}
 	
 	
