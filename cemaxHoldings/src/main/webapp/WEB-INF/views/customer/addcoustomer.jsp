@@ -15,8 +15,16 @@
  <tiles:insertDefinition name="defaultTemplate">
 	<tiles:putAttribute name="body">
 	<br>
-<c:if test="${param.addsuccess eq true}">
+		<c:if test="${param.addsuccess eq true}">
 		<div class="alert alert-success">Customer is added Successfully!
+		</div>
+		</c:if>
+		<c:if test="${param.cusexist eq true}">
+		<div class="alert alert-danger">Customer Already exist!
+		</div>
+		</c:if>
+		<c:if test="${param.error eq true}">
+		<div class="alert alert-danger">Somthing went wrong!
 		</div>
 		</c:if>
 
@@ -34,27 +42,27 @@
 			
 			<div class="col-md-6">
 				<label style="float: left">Customer ID:</label>
-				<form:input class="form-control input-sm" type="text" path="cid"></form:input>
+				<form:input class="form-control input-sm" type="text" path="cid" required="required" oninvalid="this.setCustomValidity('Id is required')"></form:input>
 			</div>
 			<div class="col-md-6">
 				<label style="float: left">Customer Name:</label>
-				<form:input class="form-control input-sm" type="text" path="cname"></form:input>
+				<form:input class="form-control input-sm" type="text" path="cname" required="required"></form:input>
 			</div>
 			<div class="col-md-6">
 				<label style="float: left">Address:</label>
-				<form:input class="form-control input-sm" type="text" path="caddress"></form:input>
+				<form:input class="form-control input-sm" type="text" path="caddress" required="required"></form:input>
 			</div>
 			<div class="col-md-6">
 				<label style="float: left">Contact No1:</label>
-				<form:input class="form-control input-sm" type="text" path="ccno1"></form:input>
+				<form:input class="form-control input-sm" type="number" path="ccno1" required="required"></form:input>
 			</div>
 			<div class="col-md-6">
 				<label style="float: left">Contact No2:</label>
-				<form:input class="form-control input-sm" type="text" path="ccno2"></form:input>
+				<form:input class="form-control input-sm" type="number" path="ccno2"></form:input>
 			</div>
 			<div class="col-md-6">
 				<label style="float: left">Area:</label>
-				<form:input class="form-control input-sm" type="text" path="area"></form:input>
+				<form:input class="form-control input-sm" type="text" path="area" required="required"></form:input>
 			</div>
 			</div></div>
 			
@@ -65,11 +73,11 @@
 			<div class="panel-body">
 			<div class="col-md-6">
 				<label style="float: left">Name:</label>
-				<form:input class="form-control input-sm" type="text" path="owname"></form:input>
+				<form:input class="form-control input-sm" type="text" path="owname" required="required"></form:input>
 				<label style="float: left">Address:</label>
 				<form:input class="form-control input-sm" type="text" path="owaddress"></form:input>
 				<label style="float: left">Contact No:</label>
-				<form:input class="form-control input-sm" type="text" path="owcno"></form:input>
+				<form:input class="form-control input-sm" type="text" path="owcno" required="required"></form:input>
 			</div>	
 				<br>
 			<div class="col-md-12">	

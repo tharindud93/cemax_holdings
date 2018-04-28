@@ -35,8 +35,20 @@ public class customerController {
 	 }
 	@RequestMapping(value="addcustomerpro", method=RequestMethod.POST)
 	 public ModelAndView addcustomerprocess(@ModelAttribute("customer") Customer customer) {
-		customerService.addCustomer(customer);
-		return new ModelAndView("redirect:" + "addcustomer?addsuccess=true");
+		try {
+			Customer cus =customerService.getCustomerById(customer.getCid());
+			//System.out.println("cusid"+cus.getCid());
+			if(cus != null) {
+				return new ModelAndView("redirect:" + "addcustomer?cusexist=true");
+			} else {
+				System.out.println("Awaaaa");
+				customerService.addCustomer(customer);
+				return new ModelAndView("redirect:" + "addcustomer?addsuccess=true");
+			}
+				
+		} catch (Exception e) {
+			return new ModelAndView("redirect:" + "addcustomer?error=true");		}
+		
 	 }
 	
 	   @RequestMapping(value="/editcustomer")  
@@ -48,8 +60,13 @@ public class customerController {
 	    } 
 	   @RequestMapping(value="editcustomerpro", method=RequestMethod.POST)
 		 public ModelAndView editcustomerprocess(@ModelAttribute("customer") Customer customer) {
-			customerService.updateCustomer(customer);
-			return new ModelAndView("redirect:" + "searchEditcustomer?updated=true");
+		   try {
+			   customerService.updateCustomer(customer);
+				return new ModelAndView("redirect:" + "searchEditcustomer?updated=true");
+		} catch (Exception e) {
+			return new ModelAndView("redirect:" + "searchEditcustomer?error=true");
+		}
+			
 	   }
 	@RequestMapping(value="searchEditcustomer", method=RequestMethod.GET)
 	 public ModelAndView searchEditcustomer(@ModelAttribute("customer") Customer customer) {

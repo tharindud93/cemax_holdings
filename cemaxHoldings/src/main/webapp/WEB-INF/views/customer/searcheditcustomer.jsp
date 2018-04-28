@@ -12,6 +12,15 @@
 <body>
  <tiles:insertDefinition name="defaultTemplate">
 	<tiles:putAttribute name="body">
+	<br>
+	<c:if test="${param.updated eq true}">
+		<div class="alert alert-success">Customer Updated Successfully!
+		</div>
+		</c:if>
+		<c:if test="${param.error eq true}">
+		<div class="alert alert-danger">Somthing went wrong Customer not updated!
+		</div>
+		</c:if>
 	
 	<form:form class="input-sm" modelAttribute="customer" >
 	<div class="col-md-12">
