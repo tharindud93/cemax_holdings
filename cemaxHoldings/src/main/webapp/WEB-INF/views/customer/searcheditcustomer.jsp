@@ -70,9 +70,12 @@ $(document).ready(function() {
 			          '<td>' + customers[i]["value"][4] + '</td>' +
 			          
 
-			          '<td>'+'<form action="editcustomer">'+'<input type="text" hidden="true" value="'+ customers[i]["value"][0]+'" name="id"/>'+
+			        '<td>'+'<form action="editcustomer">'+'<input type="text" hidden="true" value="'+ customers[i]["value"][0]+'" name="id"/>'+
 						'<input type="submit" class="" value="Edit" />'+
-						'</form>'+
+						'</form>'+'</td>'+
+					'<td>'+'<form action="viewcustomer">'+'<input type="text" hidden="true" value="'+ customers[i]["value"][0]+'" name="id"/>'+
+						'<input type="submit" class="" value="View" />'+
+						'</form>'+'</td>'+
 			      '</tr>'
 			    );
 			  }	}   		   
@@ -93,7 +96,8 @@ $(document).ready(function() {
 								<th class="col-xs-1">Address</th>
 								<th class="col-xs-1">Owner Name</th>
 								<th class="col-xs-1">Contact No:</th>
-								<th class="col-xs-1">Action</th>					
+								<th class="col-xs-1">Edit Customer</th>	
+								<th class="col-xs-1">View Customer</th>					
 							</tr>
 							</thead>						
 						</table>											

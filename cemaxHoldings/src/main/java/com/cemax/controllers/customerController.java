@@ -50,6 +50,13 @@ public class customerController {
 			return new ModelAndView("redirect:" + "addcustomer?error=true");		}
 		
 	 }
+	@RequestMapping(value="/viewcustomer")  
+    public ModelAndView viewCustomer(HttpServletRequest request,Model model,Customer customer){  
+        Customer scustomer=customerService.getCustomerById(request.getParameter("id"));
+        System.out.println(request.getParameter("id"));
+        model.addAttribute(scustomer);
+        return new ModelAndView("/customer/viewcustomer","command",scustomer);  
+    }
 	
 	   @RequestMapping(value="/editcustomer")  
 	    public ModelAndView editCustomer(HttpServletRequest request,Model model,Customer customer){  
