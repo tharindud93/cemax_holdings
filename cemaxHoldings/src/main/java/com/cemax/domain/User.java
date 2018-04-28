@@ -1,14 +1,30 @@
 package com.cemax.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity(name="user")
 public class User {
 
+	@Id
+	@Column
 	private String userid;
+	@Column
 	private String username;
+	@Column
 	private String nic;
+	@Column
 	private int cno;
+	@Column
 	private String address;
+	@Column
 	private String pass;
+	@Column
 	private String repass;
+	
+	
+	
 	public String getUserid() {
 		return userid;
 	}
