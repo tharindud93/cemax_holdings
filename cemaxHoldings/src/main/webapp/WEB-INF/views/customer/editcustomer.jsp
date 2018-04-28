@@ -27,6 +27,11 @@
 			<div class="panel-heading">Edit Customer</div>
 			<div class="panel-body">
 			<div class="col-md-6">
+				
+ 				 <form:checkbox path="active" ></form:checkbox> Active
+
+			</div>
+			<div class="col-md-6">
 				<label style="float: left">Customer ID:</label>
 				<form:input class="form-control input-sm" type="text" path="cid"></form:input>
 			</div>

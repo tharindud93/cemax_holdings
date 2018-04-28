@@ -21,11 +21,17 @@
 		</c:if>
 
 	<form:form class="input-sm"  action="/cemaxHoldings/addcustomerpro" modelAttribute="customer">
+		
 		<div class="col-md-12" style="align: center">
 		<div class="panel panel-group">
 			<div class="panel panel-primary">
 			<div class="panel-heading">Register New Customer</div>
 			<div class="panel-body">
+			
+				
+ 				 <form:hidden path="active" value="true"></form:hidden>
+				
+			
 			<div class="col-md-6">
 				<label style="float: left">Customer ID:</label>
 				<form:input class="form-control input-sm" type="text" path="cid"></form:input>

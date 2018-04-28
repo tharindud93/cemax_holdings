@@ -33,7 +33,7 @@ public class CustomerDaoImpl implements CustomerDao {
 	public Customer getCustomerById(String id) {
 		Customer customer;
 		customer=entityManager.find(Customer.class, id);
-		//customer=(Customer) entityManager.createQuery("SELECT c FROM customer c WHERE c.id=:cid").setParameter("cid", id).getSingleResult();
+		//customer=(Customer) entityManager.createQuery("SELECT c FROM customer c WHERE c.id=:cid AND c.active=1").setParameter("cid", id).getSingleResult();
 		return customer;
 	}
 
@@ -46,6 +46,7 @@ public class CustomerDaoImpl implements CustomerDao {
 	@Override
 	public int updateCustomer(Customer cu) {
 		Customer customer=entityManager.find(Customer.class,cu.getCid());
+		customer.setActive(cu.isActive());
 		customer.setArea(cu.getArea());
 		customer.setCaddress(cu.getCaddress());
 		customer.setCcno1(cu.getCcno1());

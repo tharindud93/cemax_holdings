@@ -25,6 +25,8 @@ private String owname;
 private String owaddress;
 @Column
 private String owcno;
+@Column
+private boolean active;
 
 public String getCid() {
 	return cid;
@@ -79,6 +81,12 @@ public String getOwcno() {
 }
 public void setOwcno(String owcno) {
 	this.owcno = owcno;
+}
+public boolean isActive() {
+	return active;
+}
+public void setActive(boolean active) {
+	this.active = active;
 }
 
 
