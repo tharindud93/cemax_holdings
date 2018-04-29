@@ -1,3 +1,4 @@
+
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -14,22 +15,22 @@
 	<tiles:putAttribute name="body">
 	<br>
 	<c:if test="${param.updated eq true}">
-		<div class="alert alert-success">Customer Updated Successfully!
+		<div class="alert alert-success">User Updated Successfully!
 		</div>
 		</c:if>
 		<c:if test="${param.error eq true}">
-		<div class="alert alert-danger">Somthing went wrong Customer not updated!
+		<div class="alert alert-danger">Somthing went wrong user not updated!
 		</div>
 		</c:if>
 	
-	<form:form class="input-sm" modelAttribute="customer" >
+	<form:form class="input-sm" modelAttribute="user" >
 	<div class="col-md-12">
 	<div class="panel panel-primary">
-     <div class="panel-heading text-left">Search Customer</div>
+     <div class="panel-heading text-left">Search User</div>
       <div class="panel-body">						
 	<div class="col-md-4">
 	<%-- <form:hidden class="text-long" path="cid" /> --%>
-	<form:input type="text" class="form-control" id="ajaxsearch" path="cid" placeholder="Enter Customer ID Here..." />
+	<form:input type="text" class="form-control" id="ajaxsearch" path="userid" placeholder="Enter User ID Here..." />
 	</div>
 		</div>
 	</div>
@@ -40,41 +41,38 @@
 <script>	
 $(document).ready(function() {
 	$('#ajaxsearch').autocomplete({		
-		serviceUrl: '${pageContext.request.contextPath}/getCustomers',
-		paramName: "cid",
+		serviceUrl: '${pageContext.request.contextPath}/getusers',
+		paramName: "uid",
 		delimiter: ",",
 		onSearchStart: function (query) {			
 			$("#mytable td").remove();
 		},
 	   transformResult: function(response) {
 		  var suggesti= $.map($.parseJSON(response), function(item) {			
-		      return { value:[ item.cid,item.cname,item.caddress,item.owname,item.ccno1], data: item.cid };
+		      return { value:[ item.userid,item.username,item.nic,item.cno,item.address], data: item.userid };
 		   })		 
-			    var customers =suggesti;
+			    var users =suggesti;
 			    var tabl = $("#mytable"),
 			      columns, i;
 			    
-			    if (!$.trim(customers)){
+			    if (!$.trim(users)){
 					document.getElementById("div2").innerHTML="<div class='alert alert-danger'>No Maches Found!!</div>"
 				}else{
 					document.getElementById("div2").innerHTML=""
 			    
-			  for (i = 0; i < customers.length; i++) {				  
-			   var userd=customers[i]["value"][0];
+			  for (i = 0; i < users.length; i++) {				  
+			   var userd=users[i]["value"][0];
 			    tabl.append(
 			      '<tr>' + 
-			          '<td>' + customers[i]["value"][0] + '</td>' + 
-			          '<td>' + customers[i]["value"][1] + '</td>' +
-			          '<td>' + customers[i]["value"][2] + '</td>' +
-			          '<td>' + customers[i]["value"][3] + '</td>' +
-			          '<td>' + customers[i]["value"][4] + '</td>' +
+			          '<td>' + users[i]["value"][0] + '</td>' + 
+			          '<td>' + users[i]["value"][1] + '</td>' +
+			          '<td>' + users[i]["value"][2] + '</td>' +
+			          '<td>' + users[i]["value"][3] + '</td>' +
+			          '<td>' + users[i]["value"][4] + '</td>' +
 			          
 
-			        '<td>'+'<form action="editcustomer">'+'<input type="text" hidden="true" value="'+ customers[i]["value"][0]+'" name="id"/>'+
+			        '<td>'+'<form action="edituser">'+'<input type="text" hidden="true" value="'+ users[i]["value"][0]+'" name="id"/>'+
 						'<input type="submit" class="" value="Edit" />'+
-						'</form>'+'</td>'+
-					'<td>'+'<form action="viewcustomer">'+'<input type="text" hidden="true" value="'+ customers[i]["value"][0]+'" name="id"/>'+
-						'<input type="submit" class="" value="View" />'+
 						'</form>'+'</td>'+
 			      '</tr>'
 			    );
@@ -91,13 +89,13 @@ $(document).ready(function() {
 						<table id="mytable" class="table input-sm">
 						<thead valign="top">
 						<tr >
-								<th class="col-xs-1">Customer ID</th>
-								<th class="col-xs-1">Customer Name</th>
-								<th class="col-xs-1">Address</th>
-								<th class="col-xs-1">Owner Name</th>
+								<th class="col-xs-1">User ID</th>
+								<th class="col-xs-1">User Name</th>
+								<th class="col-xs-1">NIC</th>
 								<th class="col-xs-1">Contact No:</th>
+								<th class="col-xs-1">Address</th>
 								<th class="col-xs-1">Edit Customer</th>	
-								<th class="col-xs-1">View Customer</th>					
+													
 							</tr>
 							</thead>						
 						</table>											

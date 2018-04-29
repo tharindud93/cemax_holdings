@@ -29,28 +29,34 @@ public class UserDaoImpl implements UserDao {
 		return 0;
 	}
 
+
 	@Override
-	public User getUserById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public User getUserById(String id) {
+		User user=entityManager.find(User.class, id);
+		return user;
 	}
 
 	@Override
-	public int deleteUser(int id) {
+	public int deleteUser(String id) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int updateUser(int id) {
-		// TODO Auto-generated method stub
+	public int updateUser(User usr) {
+		User user=entityManager.find(User.class, usr.getUserid());
+		user.setAddress(usr.getAddress());
+		user.setCno(usr.getCno());
+		user.setUsername(usr.getUsername());
+		user.setPass(usr.getPass());
 		return 0;
 	}
 
 	@Override
 	public List<User> allUsers() {
-		// TODO Auto-generated method stub
-		return null;
+		List<User> users;
+		users=entityManager.createQuery("SELECT c FROM user c").getResultList();
+		return users;
 	}
 
 }

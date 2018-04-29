@@ -25,21 +25,21 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User getUserById(int id) {
+	public User getUserById(String id) {
 		// TODO Auto-generated method stub
 		return userDao.getUserById(id);
 	}
 
 	@Override
-	public int deleteUser(int id) {
+	public int deleteUser(String id) {
 		// TODO Auto-generated method stub
 		return userDao.deleteUser(id);
 	}
 
 	@Override
-	public int updateUser(int id) {
+	public int updateUser(User user) {
 		// TODO Auto-generated method stub
-		return userDao.updateUser(id);
+		return userDao.updateUser(user);
 	}
 
 	@Override

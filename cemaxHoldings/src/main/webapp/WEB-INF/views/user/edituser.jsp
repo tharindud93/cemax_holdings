@@ -11,23 +11,19 @@
  <tiles:insertDefinition name="defaultTemplate">
 	<tiles:putAttribute name="body">
 
-<c:if test="${param.addsuccess eq true}">
-		<div class="alert alert-success">User added Successfully!
-		</div>
-		</c:if>
 
-<form:form class="input-sm" action="/cemaxHoldings/adduserpro" method="POST" modelAttribute="user">
+<form:form class="input-sm" action="/cemaxHoldings/edituserpro" method="POST" modelAttribute="user">
 <div class="col-md-12" style="align:center">
 <div class="panel panel-group">
 			<div class="panel panel-primary">
-			<div class="panel-heading">Register New User</div>
+			<div class="panel-heading">Update User</div>
 			<div class="panel-body">
 <label style="float: left">User ID:</label>
-<form:input class="form-control input-sm" type="text" path="userid"></form:input>
+<form:input class="form-control input-sm" type="text" path="userid" readonly="true"></form:input>
 <label style="float: left">User Name:</label>
 <form:input class="form-control input-sm" type="text" path="username"></form:input>
 <label style="float: left">NIC No:</label>
-<form:input class="form-control input-sm" type="text" path="nic"></form:input>
+<form:input class="form-control input-sm" type="text" path="nic" readonly="true"></form:input>
 <label style="float: left">Contact No:</label>
 <form:input class="form-control input-sm" type="text" path="cno"></form:input>
 <label style="float: left">Address:</label>

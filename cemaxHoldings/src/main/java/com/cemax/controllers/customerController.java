@@ -47,7 +47,8 @@ public class customerController {
 			}
 				
 		} catch (Exception e) {
-			return new ModelAndView("redirect:" + "addcustomer?error=true");		}
+			return new ModelAndView("redirect:" + "addcustomer?error=true");
+			}
 		
 	 }
 	@RequestMapping(value="/viewcustomer")  
