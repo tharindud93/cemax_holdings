@@ -3,37 +3,18 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
-<html>
-<head>
 
-<title>Search/Edit Cust.</title>
-</head>
-<body>
- <tiles:insertDefinition name="defaultTemplate">
-	<tiles:putAttribute name="body">
-	<br>
-	<c:if test="${param.updated eq true}">
-		<div class="alert alert-success">Customer Updated Successfully!
-		</div>
-		</c:if>
-		<c:if test="${param.error eq true}">
-		<div class="alert alert-danger">Somthing went wrong Customer not updated!
-		</div>
-		</c:if>
 	
-	<form:form class="input-sm" modelAttribute="customer" >
 	<div class="col-md-12">
 	<div class="panel panel-primary">
      <div class="panel-heading text-left">Search Customer</div>
       <div class="panel-body">						
 	<div class="col-md-4">
-	<%-- <form:hidden class="text-long" path="cid" /> --%>
-	<form:input type="text" class="form-control" id="ajaxsearch" path="cid" placeholder="Enter Customer ID Here..." />
+	<input type="text" class="form-control" id="ajaxsearch" id="cid" placeholder="Enter Customer ID Here..." />
 	</div>
 		</div>
 	</div>
-	</div>										
-</form:form>
+</div>
 						
 						
 <script>	
@@ -69,12 +50,8 @@ $(document).ready(function() {
 			          '<td>' + customers[i]["value"][4] + '</td>' +
 			          
 
-			        '<td>'+'<form action="editcustomer">'+'<input type="text" hidden="true" value="'+ customers[i]["value"][0]+'" name="id"/>'+
-						'<input type="submit" class="" value="Edit" />'+
-						'</form>'+'</td>'+
-					'<td>'+'<form action="viewcustomer">'+'<input type="text" hidden="true" value="'+ customers[i]["value"][0]+'" name="id"/>'+
-						'<input type="submit" class="" value="View" />'+
-						'</form>'+'</td>'+
+			        '<td>'+'<button onclick="select1(this)">Select</button>'+'</td>'+
+					
 			      '</tr>'
 			    );
 			  }	}   		   
@@ -82,6 +59,23 @@ $(document).ready(function() {
            }           
 	 });
  }); 
+ 
+
+ </script>
+ <script>
+function select1(){
+
+	 $('#mytable tr').click(function() {
+        var data = this.cells[0].innerHTML;
+       if(data) {
+       	document.getElementById ("cusid").value="";
+       	document.getElementById ("cusid").value=data;
+          $('#cusSearchModal').modal('hide'); 
+			
+       }
+       });
+	   
+}
  </script>
  <div id="div2"></div>
  
@@ -95,15 +89,13 @@ $(document).ready(function() {
 								<th class="col-xs-1">Address</th>
 								<th class="col-xs-1">Owner Name</th>
 								<th class="col-xs-1">Contact No:</th>
-								<th class="col-xs-1">Edit Customer</th>	
-								<th class="col-xs-1">View Customer</th>					
+								<th class="col-xs-1">Select Customer</th>	
+				
 							</tr>
 							</thead>						
 						</table>											
 					</div>
 			</div>				
-	</tiles:putAttribute>
-	</tiles:insertDefinition>
 
 <script src="<c:url value="/resources/core/jquery.autocomplete.min.js" />"></script>
 </body>

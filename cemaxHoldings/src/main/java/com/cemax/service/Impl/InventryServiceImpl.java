@@ -23,6 +23,11 @@ public class InventryServiceImpl implements InventryService {
 		return inventryDao.adddinventry(dailyInventry);
 	
 	}
+
+	@Override
+	public DailyInventry getinvbytoday() {
+		return inventryDao.getinvbytoday();
+	}
 	
 
 }

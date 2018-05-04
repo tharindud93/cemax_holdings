@@ -97,6 +97,7 @@ function total(){
 	var total=document.getElementById('totl').value=amm+amount3;
 	//qunt1*unitp1=amount1;
 }
+
 </script>
 <script src="<c:url value="/resources/js/nav_bar_span.js" />"></script> 
 </html>

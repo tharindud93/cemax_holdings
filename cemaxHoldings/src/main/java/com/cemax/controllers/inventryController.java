@@ -19,6 +19,7 @@ public class inventryController {
 
 	@RequestMapping(value="dinventry" ,method=RequestMethod.GET)
 	public ModelAndView dailyinventry(@ModelAttribute("dailyInventry") DailyInventry dailyInventry) {
+		//inventryService.getinvbytoday();
 		return new ModelAndView("/inventry/DinvUpdate","command",dailyInventry);
 	}
 	
