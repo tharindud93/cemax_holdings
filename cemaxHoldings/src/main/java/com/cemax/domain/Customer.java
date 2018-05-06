@@ -8,6 +8,7 @@ import javax.persistence.Id;
 public class Customer {
 @Id
 @Column
+
 private String cid;
 @Column
 private String cname;

@@ -1,8 +1,8 @@
-package com.cemax.dao;
+package com.cemax.service;
 
 import com.cemax.domain.Invoice;
 
-public interface InvoiceDao {
-
+public interface InvoiceService {
 	public int addInvoice(Invoice invoice);
+
 }

@@ -2,13 +2,25 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-
+<%@ page import="java.text.SimpleDateFormat" import="java.util.Date"%>
  <script src="<c:url value="/resources/core/jquery.autocomplete.min.js" />"></script>
 <title>Invoice</title>
 </head>
 <body >
+<%
+	SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+	SimpleDateFormat ti = new SimpleDateFormat("HH:mm:ss");
+
+%>
+<c:set var="today1" value="<%=sdf1.format(new Date())%>" />
+<c:set var="now" value="<%=ti.format(new Date())%>" />
 	 <tiles:insertDefinition name="defaultTemplate">
 	<tiles:putAttribute name="body">
+	
+	<c:if test="${param.success eq true}">
+		<div class="alert alert-success">Invoice added Successfully!
+		</div>
+		</c:if>
 <%-- 	<!-- Modal -->
 	<div id="delnoteModal" class="modal fade" role="dialog">
 		<div class="modal-dialog" style="width:80%">
@@ -46,26 +58,29 @@
 
 
 
-	<form:form class="form:input-sm">
+	<form:form class="form:input-sm" action="addinvoicepro" method="post">
 		<div class="col-md-12" style="align: center">
 			<div class="panel panel-group">
 				<div class="panel panel-primary">
 					<div class="panel-heading">Customer Details</div>
 					<div class="panel-body">
+					
+					<form:hidden path="date" value="${today1}"></form:hidden>
+					<form:hidden path="time" value="${now}"></form:hidden>
 				<div class="col-md-6">
 						<label>Invoice No:</label>
-						 <form:input type="text" class="form-control input-sm" name="invid" path="invid" />
+						 <form:input type="text" class="form-control input-sm" name="invid" path="invid" ></form:input>
 						 
 						  </div>
 				<div class="col-md-6">
 						<label>Customer Name:</label>
-						 <form:input type="text" class="form-control input-sm" id="cusid" name="cusid" path="cusid" />
+						 <form:input type="text" class="form-control input-sm" id="cusid" name="cusid" path="cusid" ></form:input>
 						 <button type="button" class="btn btn-success" data-toggle="modal"
 							data-target="#cusSearchModal">Get Customer</button>
 						  </div><br> 
 						  <div class="col-md-6">
 						  <label>Delivery Note No:</label> 
-						  <form:input type="text" name="delnoteno" class="form-control form:input-sm" id="delnoteno" path="delnoteno"/>
+						  <form:input type="text" name="delnoteno" class="form-control form:input-sm" id="delnoteno" path="delnoteno"></form:input>
 							</div>
 						<!-- 	<br>
 						<button type="button" class="btn btn-success" data-toggle="modal"
@@ -152,12 +167,15 @@ $('#delnoteModal').on('hidden.bs.modal', function (e) {
 	</script>
 <script>
 function total(){
-
-	var amount1=document.getElementById('amoun1').value*1;
-	var amount2=document.getElementById('amoun2').value*1;
+	var qunt1=document.getElementById('qun1').value;
+	var unitp1=document.getElementById('unip1').value;
+	var amount1= document.getElementById('amoun1').value=qunt1*unitp1;
+	var qunt2=document.getElementById('qun2').value;
+	var unitp2=document.getElementById('unip2').value;	
+	var amount2=document.getElementById('amoun2').value=qunt2*unitp2;
 	var amount3=document.getElementById('amoun3').value*1;
-	var amm=amount1+amount2;
-	var total=document.getElementById('totl').value=amm+amount3;
+	
+	var total=document.getElementById('totl').value=amount1+amount2+amount3;
 	//qunt1*unitp1=amount1;
 }
 </script>

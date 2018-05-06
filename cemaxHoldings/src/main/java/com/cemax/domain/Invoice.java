@@ -26,6 +26,11 @@ public class Invoice {
 	private int ppcup;
 	@Column 
 	private int transport;
+	@Column
+	private String date;;
+	@Column
+	private String time;
+	
 	public int getInvid() {
 		return invid;
 	}
@@ -73,6 +78,18 @@ public class Invoice {
 	}
 	public void setTransport(int transport) {
 		this.transport = transport;
+	}
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
+	public String getTime() {
+		return time;
+	}
+	public void setTime(String time) {
+		this.time = time;
 	}
 	
 }
