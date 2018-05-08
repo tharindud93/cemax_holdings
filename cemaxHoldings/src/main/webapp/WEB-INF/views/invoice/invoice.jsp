@@ -69,19 +69,22 @@
 					<form:hidden path="time" value="${now}"></form:hidden>
 				<div class="col-md-6">
 						<label>Invoice No:</label>
-						 <form:input type="text" class="form-control input-sm" name="invid" path="invid" ></form:input>
-						 
-						  </div>
+						<form:input type="text" class="form-control input-sm" name="invid" path="invid" ></form:input>
+				</div>
 				<div class="col-md-6">
-						<label>Customer Name:</label>
-						 <form:input type="text" class="form-control input-sm" id="cusid" name="cusid" path="cusid" ></form:input>
-						 <button type="button" class="btn btn-success" data-toggle="modal"
-							data-target="#cusSearchModal">Get Customer</button>
-						  </div><br> 
-						  <div class="col-md-6">
-						  <label>Delivery Note No:</label> 
-						  <form:input type="text" name="delnoteno" class="form-control form:input-sm" id="delnoteno" path="delnoteno"></form:input>
-							</div>
+						<label>Duration:</label>
+						<form:input type="text" class="form-control input-sm" name="invid" path="duration" ></form:input>
+				</div>
+				<div class="col-md-6">
+						<label>Customer Id:</label>
+						<form:input type="text" class="form-control input-sm" id="cusid" name="cusid" path="cusid" ></form:input>
+						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#cusSearchModal">Get Customer</button>
+				</div>
+				<br> 
+				<div class="col-md-6">
+						<label>Delivery Note No:</label> 
+						<form:input type="text" name="delnoteno" class="form-control form:input-sm" id="delnoteno" path="delnoteno"></form:input>
+				</div>
 						<!-- 	<br>
 						<button type="button" class="btn btn-success" data-toggle="modal"
 							data-target="#delnoteModal">Add</button> -->

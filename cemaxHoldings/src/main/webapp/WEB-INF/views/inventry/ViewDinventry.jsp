@@ -5,12 +5,12 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
 <html>
-<head>
+<head  >
 
 
-<title>D-Inventry</title>
+<title>View D-Inventry</title>
 </head>
-<body >
+<body onload="total(),openNav(),startTime()">
 
  <% SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); %>
 <c:set var="today" value="<%=sdf.format(new Date())%>" />
@@ -21,16 +21,8 @@
 	 <tiles:insertDefinition name="defaultTemplate">
 	<tiles:putAttribute name="body">
 
-<c:if test="${param.success eq true}">
-		<div class="alert alert-success">Inventory added Successfully!
-		</div>
-</c:if>
-<c:if test="${param.before eq true}">
-		<div class="alert alert-danger">Add Daily Inventory before Take invoice!</div>
 
-</c:if>
-
-	<form:form class="input-sm" action="dinventrypro" method="POST">
+	<form:form class="input-sm">
 		<div class="col-md-12" >
 			<div class="panel panel-group">
 
@@ -41,8 +33,15 @@
 				<div class="panel panel-primary">
 					<div class="panel-heading">Inventry Details</div>
 					<div class="panel-body">
-						<%-- <form:input path="id"></form:input> --%>
-						<form:hidden path="date" value="${today}"></form:hidden> 
+					<div class="col-md-6">
+					<label  style="float:left">Inventry Id:</label>
+						 <form:input class="form-control" path="id"></form:input>
+						 </div>
+					<div class="col-md-6"> 
+					<label style="float:left">Date:</label>
+						 <form:input class="form-control" path="date"></form:input>
+						 </div> 
+						 <hr> 
 						<div class="table-responsive">
 					<table class="table table-hover">
 						<tr>
@@ -53,18 +52,18 @@
 							<th>Amount</th>
 						</tr>
 						<tr> 
-							<td><form:input type="text" class="form-control input-sm" id="qun1" path="opcquan"></form:input></td>
+							<td><form:input type="text" class="form-control" id="qun1" path="opcquan" readonly="true"></form:input></td>
 							<td>UltraTech (OPC) Cement 50Kg</td>
-							<td><form:input type="text" class="form-control input-sm" id="unip1" path="opcprice"></form:input></td>
-							<td><form:input type="text" class="form-control input-sm" id="mar1" path="opcmargin"></form:input></td>
-							<td><input type="text" class="form-control input-sm" id="amoun1"/></td>
+							<td><form:input type="text" class="form-control" id="unip1" path="opcprice" readonly="true"></form:input></td>
+							<td><form:input type="text" class="form-control" id="mar1" path="opcmargin" readonly="true" ></form:input></td>
+							<td><input type="text" class="form-control" id="amoun1"/></td>
 						</tr>
 						<tr>
-							<td><form:input type="text" class="form-control input-sm" id="qun2" path="ppcquan"></form:input></td>
+							<td><form:input type="text" class="form-control" id="qun2" path="ppcquan" readonly="true"></form:input></td>
 							<td>UltraTech (PPC) Cement 50Kg</td>
-							<td><form:input type="text" class="form-control input-sm" id="unip2" path="ppcprice"></form:input></td>
-							<td><form:input type="text" class="form-control input-sm" id="mar1" path="ppcmargin"></form:input></td>
-							<td><input type="text" class="form-control input-sm" id="amoun2"/></td>
+							<td><form:input type="text" class="form-control" id="unip2" path="ppcprice" readonly="true"></form:input></td>
+							<td><form:input type="text" class="form-control" id="mar1" path="ppcmargin" readonly="true"></form:input></td>
+							<td><input type="text" class="form-control" id="amoun2" /></td>
 						</tr>
 
 						<tr>
@@ -72,19 +71,18 @@
 							<td></td>
 							<td>Transport Chargers</td>
 							<td></td>
-							<td><input type="hidden" class="form-control input-sm" id="unip3"/></td>
-							<td><form:input type="text" class="form-control input-sm" id="amoun3" path="transport"></form:input></td>
+							<td><input type="hidden" class="form-control" id="unip3" /></td>
+							<td><form:input type="text" class="form-control" id="amoun3" path="transport" readonly="true"></form:input></td>
 						</tr>
 						<tr>
+							<td></td><td>Total Amount</td>
 							<td colspan="2"></td>
-							<td></td>
-							<td><button type="button" id="btntot" class="btn btn-success" style="float: right; width: 100%" onclick="total()">Total</button></td>
-							<td><input type="text" class="form-control input-sm" id="totl"></td>
+							<td><input type="text" class="form-control" id="totl" readonly="true"></td>
 						</tr>
 					</table>
 						
 				</div>
-				<input type="submit" class="btn btn-primary col-xs-3" value="save"/>
+				
 			
 				</div></div></div></div>
 				</form:form>
@@ -107,5 +105,5 @@ function total(){
 }
 
 </script>
-<script src="<c:url value="/resources/js/nav_bar_span.js" />"></script> 
+
 </html>

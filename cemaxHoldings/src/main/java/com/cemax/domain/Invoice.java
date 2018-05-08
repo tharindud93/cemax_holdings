@@ -2,9 +2,8 @@ package com.cemax.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+
 
 @Entity(name="invoice")
 public class Invoice {
@@ -12,8 +11,9 @@ public class Invoice {
 	@Column
 	private int invid;
 	@Column
-	
 	private int cusid;
+	@Column
+	private int duration;
 	@Column
 	private int delnoteno;
 	@Column
@@ -90,6 +90,12 @@ public class Invoice {
 	}
 	public void setTime(String time) {
 		this.time = time;
+	}
+	public void setDuration(int duration) {
+		this.duration=duration;
+	}
+	public int getDuration(){
+		return duration;
 	}
 	
 }

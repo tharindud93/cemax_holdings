@@ -18,6 +18,7 @@
 
 				<ul id="menu1" class="nav navbar-nav">
 					<li><a class="navbar-brand">-Menu-</a></li>
+					
 					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Customer
 					<span class="caret"></span>
 					<!-- <span style="font-size:16px;" class="pull-right hidden-xs showopacity"></span> --></a>
@@ -27,13 +28,27 @@
 					</ul>
 					</li>
 					
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Inventory
+					<span class="caret"></span>
+					<!-- <span style="font-size:16px;" class="pull-right hidden-xs showopacity"></span> --></a>
+					<ul class="dropdown-menu forAnimate" role="menu">
+					<li><a class="navbar-nav" href="/cemaxHoldings/dinventry">Add Inventory</a></li>
+					<li><a class="navbar-nav" href="/cemaxHoldings/serinventry">Serch/View</a></li>
+					</ul>
+					</li>
+					
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Invoice
+					<span class="caret"></span>
+					<!-- <span style="font-size:16px;" class="pull-right hidden-xs showopacity"></span> --></a>
+					<ul class="dropdown-menu forAnimate" role="menu">
+					<li><a class="navbar-nav" href="/cemaxHoldings/invoice">Add Invoice</a></li>
+					<li><a class="navbar-nav" href="/cemaxHoldings/allinv">All Invoices</a></li>
+					</ul>
+					</li>
 			
 				
-				<li><a class="navbar-nav" href="/cemaxHoldings/invoice">Add Invoice</a></li>
 				<li><a class="navbar-nav" href="/cemaxHoldings/allcredits">Outstandings and Debits</a></li>
-				<li><a class="navbar-nav" href="/cemaxHoldings/allinv">All Invoices</a></li>
 				<li><a class="navbar-nav" href="/cemaxHoldings/allcredits">Credits</a></li>
-				<li><a class="navbar-nav" href="/cemaxHoldings/dinventry">Daily Inventry</a></li>
 				<li><a class="navbar-nav" href="/cemaxHoldings/dsum">Daily Summary</a></li>
 				<li><a class="navbar-nav" href="/cemaxHoldings/"></a></li>
 			</ul>

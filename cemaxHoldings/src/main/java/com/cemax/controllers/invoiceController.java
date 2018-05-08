@@ -1,5 +1,7 @@
 package com.cemax.controllers;
 
+import javax.persistence.NoResultException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,8 +24,10 @@ public class invoiceController {
 	@Autowired
 	InvoiceService invoiceService;
 
+
 	@RequestMapping(value="invoice", method=RequestMethod.GET)
 	public ModelAndView invoiceadd(@ModelAttribute("invoice") Invoice invoice,Model model) {
+		//try {
 		DailyInventry inv=inventryService.getinvbytoday();
 		System.out.println(inv.getOpcmargin());
 		System.out.println(inv.getPpcmargin());
@@ -31,6 +35,17 @@ public class invoiceController {
 		model.addAttribute("inventry",inv);
 
 		return new ModelAndView("/invoice/invoice","command",invoice);
+		/*} catch (NoResultException e) {
+
+			
+			return new ModelAndView("/invoice/invoice","command",invoice);
+		}*/
+	}
+	
+	@RequestMapping(value="error")
+	public ModelAndView error() {
+		return new ModelAndView("/invoice/error") ;
+		
 	}
 	@RequestMapping(value="addinvoicepro",method=RequestMethod.POST)
 	public ModelAndView addinvpro(@ModelAttribute("invoice") Invoice invoice) {
@@ -40,25 +55,27 @@ public class invoiceController {
 	}
 	
 	
-	@RequestMapping("delnote")
+/*	@RequestMapping("delnote")
 	public String adddelnote() {
 		return "delNote";
 	}
 	@RequestMapping("secus")
 	public String secus() {
 		return "/invoice/SerCustomerModal";
-	}
+	}*/
+	
+	
 	@RequestMapping("allinv")
 	public String allinvoices() {
-		return "allinvoices";
+		return "/invoice/allinvoices";
 		
 	}
 	@RequestMapping("viewinv")
 	public String viewinvoice() {
-		return "viewinvoice";
+		return "invoice/viewinvoice";
 	}
 	@RequestMapping("debauth")
 	public String authdebit() {
-		return "debitauth";
+		return "invoice/debitauth";
 	}
 }

@@ -83,13 +83,13 @@ public class customerController {
 	
 	 @RequestMapping(value = "/getCustomers", method = RequestMethod.GET)
 		public @ResponseBody
-		List<Customer> getCustomers(@RequestParam String cid, HttpServletRequest request,HttpServletResponse response) {
+		List<Customer> getCustomers(@RequestParam String cus, HttpServletRequest request,HttpServletResponse response) {
 
 			List<Customer> result = new ArrayList<Customer>();
 			List<Customer> data = customerService.Allcustomer();
 			
 			for (Customer tag  : data) {
-				if (tag.getCid().contains(cid)) {
+				if (tag.getCid().contains(cus)||tag.getCname().contains(cus)) {
 					result.add(tag);
 				}
 			}

@@ -2,6 +2,7 @@ package com.cemax.dao.Impl;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -42,6 +43,24 @@ public class InventryDaoImpl implements InventryDao {
 		System.out.println(inventry.getDate());
 		return inventry;
 		
+	}
+
+
+	@Override
+	public List<DailyInventry> AllINventrys() {
+		List<DailyInventry> inventrys;
+		inventrys=entityManager.createQuery("SELECT c FROM dinventry c").getResultList();
+		return inventrys;
+	}
+
+
+	@Override
+	public DailyInventry getinvbyday(String day) {
+		DailyInventry inventry;
+		inventry=(DailyInventry) entityManager.createQuery("SELECT c FROM dinventry c WHERE c.date=:today")
+				.setParameter("today", day).getSingleResult();
+
+		return inventry;
 	}
 	
 }

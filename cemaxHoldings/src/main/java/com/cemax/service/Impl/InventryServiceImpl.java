@@ -1,5 +1,7 @@
 package com.cemax.service.Impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
@@ -27,6 +29,16 @@ public class InventryServiceImpl implements InventryService {
 	@Override
 	public DailyInventry getinvbytoday() {
 		return inventryDao.getinvbytoday();
+	}
+
+	@Override
+	public List<DailyInventry> AllINventrys() {
+		return inventryDao.AllINventrys();
+	}
+
+	@Override
+	public DailyInventry getinvbyday(String day) {
+		return inventryDao.getinvbyday(day);
 	}
 	
 

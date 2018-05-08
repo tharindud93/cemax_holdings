@@ -21,7 +21,7 @@
 $(document).ready(function() {
 	$('#ajaxsearch').autocomplete({		
 		serviceUrl: '${pageContext.request.contextPath}/getCustomers',
-		paramName: "cid",
+		paramName: "cus",
 		delimiter: ",",
 		onSearchStart: function (query) {			
 			$("#mytable td").remove();
