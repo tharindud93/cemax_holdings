@@ -40,7 +40,7 @@
 $(document).ready(function() {
 	$('#ajaxsearch').autocomplete({		
 		serviceUrl: '${pageContext.request.contextPath}/getCustomers',
-		paramName: "cid",
+		paramName: "cus",
 		delimiter: ",",
 		onSearchStart: function (query) {			
 			$("#mytable td").remove();
@@ -98,7 +98,22 @@ $(document).ready(function() {
 								<th class="col-xs-1">Edit Customer</th>	
 								<th class="col-xs-1">View Customer</th>					
 							</tr>
-							</thead>						
+							</thead>	
+					<c:forEach var="customer" items="${customers}">
+						<tr>
+						<td>${customer.cid}</td>
+						<td>${customer.cname}</td>
+						<td>${customer.caddress}</td>
+						<td>${customer.owname}</td>
+						<td>${customer.ccno1}</td>
+						<td><form action="editcustomer"><input type="text" hidden="true" value="${customer.cid}" name="id"/>
+						<input type="submit" class="" value="Edit" /></form></td>
+						<td><form action="viewcustomer"><input type="text" hidden="true" value="${customer.cid}" name="id"/>
+						<input type="submit" class="" value="View" /></form></td>
+						</tr>
+					</c:forEach> 		
+							
+										
 						</table>											
 					</div>
 			</div>				

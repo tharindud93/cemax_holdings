@@ -66,8 +66,9 @@ public class invoiceController {
 	
 	
 	@RequestMapping("allinv")
-	public String allinvoices() {
-		return "/invoice/allinvoices";
+	public ModelAndView allinvoices(@ModelAttribute("invoice") Invoice invoice,Model model ) {
+		model.addAttribute("invoices",invoiceService.AllInvoices());
+		return new ModelAndView("/invoice/allinvoices","command",invoice);
 		
 	}
 	@RequestMapping("viewinv")

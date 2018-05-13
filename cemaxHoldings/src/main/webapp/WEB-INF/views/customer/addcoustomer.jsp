@@ -46,7 +46,7 @@
 			</div>
 			<div class="col-md-6">
 				<label style="float: left">Customer Name:</label>
-				<form:input class="form-control input-sm" type="text" path="cname" required="required" value="dana"></form:input>
+				<form:input class="form-control input-sm" type="text" path="cname" required="required"></form:input>
 			</div>
 			<div class="col-md-6">
 				<label style="float: left">Address:</label>

@@ -94,10 +94,23 @@ $(document).ready(function() {
 								<th class="col-xs-1">NIC</th>
 								<th class="col-xs-1">Contact No:</th>
 								<th class="col-xs-1">Address</th>
-								<th class="col-xs-1">Edit Customer</th>	
+								<th class="col-xs-1">Edit user</th>	
 													
 							</tr>
-							</thead>						
+							</thead>
+							
+					<c:forEach var="user" items="${users}">
+						<tr>
+						<td>${user.userid}</td>
+						<td>${user.username}</td>
+						<td>${user.nic}</td>
+						<td>${user.cno}</td>
+						<td>${user.address}</td>
+						<td><form action="edituser"><input type="text" hidden="true" value="${user.userid}" name="id"/>
+						<input type="submit" class="" value="Edit" /></form></td>
+						</tr>
+					</c:forEach> 
+													
 						</table>											
 					</div>
 			</div>				

@@ -2,6 +2,7 @@ package com.cemax.dao.Impl;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -28,6 +29,13 @@ public class InvoiceDaoImpl implements InvoiceDao{
 	public int addInvoice(Invoice invoice) {
 		entityManager.persist(invoice);
 		return 0;
+	}
+
+	@Override
+	public List<Invoice> AllInvoices() {
+		List<Invoice> invoices;
+		invoices=entityManager.createQuery("SELECT c FROM invoice c ORDER BY c.duration").getResultList();
+		return invoices;
 	}
 
 }

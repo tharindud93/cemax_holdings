@@ -1,5 +1,7 @@
 package com.cemax.service.Impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
@@ -21,6 +23,11 @@ public class InvoiceServiceImpl implements InvoiceService{
 	@Override
 	public int addInvoice(Invoice invoice) {
 		return invoiceDao.addInvoice(invoice);
+	}
+
+	@Override
+	public List<Invoice> AllInvoices() {
+		return invoiceDao.AllInvoices();
 	}
 
 }

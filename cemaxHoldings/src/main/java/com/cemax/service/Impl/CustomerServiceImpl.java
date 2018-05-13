@@ -41,7 +41,7 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public List<Customer> Allcustomer() {
+	public Iterable<Customer> Allcustomer() {
 		return customerdao.Allcustomer();
 	}
 	

@@ -29,7 +29,7 @@
 			</div>
 			<div class="col-md-6">
 				<label style="float: left">Customer ID:</label>
-				<form:input class="form-control input-sm" type="text" path="cid" required="required"></form:input>
+				<form:input class="form-control input-sm" type="text" path="cid" readonly="true"></form:input>
 			</div>
 			<div class="col-md-6">
 				<label style="float: left">Customer Name:</label>

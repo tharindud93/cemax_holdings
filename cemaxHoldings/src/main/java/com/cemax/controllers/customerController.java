@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -76,8 +77,10 @@ public class customerController {
 		}
 			
 	   }
+	   
 	@RequestMapping(value="searchEditcustomer", method=RequestMethod.GET)
-	 public ModelAndView searchEditcustomer(@ModelAttribute("customer") Customer customer) {
+	 public ModelAndView searchEditcustomer(@ModelAttribute("customer") Customer customer,Model model) {
+		model.addAttribute("customers", customerService.Allcustomer());
 		return new ModelAndView("/customer/searcheditcustomer","command",customer);
 	 }
 	
@@ -86,7 +89,7 @@ public class customerController {
 		List<Customer> getCustomers(@RequestParam String cus, HttpServletRequest request,HttpServletResponse response) {
 
 			List<Customer> result = new ArrayList<Customer>();
-			List<Customer> data = customerService.Allcustomer();
+			Iterable<Customer> data = customerService.Allcustomer();
 			
 			for (Customer tag  : data) {
 				if (tag.getCid().contains(cus)||tag.getCname().contains(cus)) {

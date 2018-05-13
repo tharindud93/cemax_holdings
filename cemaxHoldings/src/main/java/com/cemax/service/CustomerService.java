@@ -10,5 +10,5 @@ public interface CustomerService {
 	public Customer getCustomerById(String id);
 	public int deleteCustomer(String id);
 	public int updateCustomer(Customer customer);
-	public List<Customer> Allcustomer();
+	public Iterable<Customer> Allcustomer();
 }

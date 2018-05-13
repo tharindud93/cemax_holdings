@@ -68,7 +68,8 @@ public class userController {
 			
 	   }
 	@RequestMapping(value="searchEdituser", method=RequestMethod.GET)
-	 public ModelAndView searchEdituser(@ModelAttribute("user") User user) {
+	 public ModelAndView searchEdituser(@ModelAttribute("user") User user,Model model) {
+		model.addAttribute("users",userService.allUsers());
 		return new ModelAndView("/user/searchedituser","command",user);
 	 }
 	

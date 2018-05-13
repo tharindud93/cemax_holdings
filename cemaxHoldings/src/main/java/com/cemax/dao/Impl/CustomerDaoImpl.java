@@ -60,8 +60,8 @@ public class CustomerDaoImpl implements CustomerDao {
 
 
 	@Override
-	public List<Customer> Allcustomer() {
-		List<Customer> customers;
+	public Iterable<Customer> Allcustomer() {
+		Iterable<Customer> customers;
 		customers=entityManager.createQuery("SELECT c FROM customer C").getResultList();
 		return customers;
 	}

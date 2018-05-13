@@ -1,7 +1,7 @@
-<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+ 	<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -68,95 +68,31 @@
 						</tr>
 					</thead>
 
-					<tbody>
-						<tr class="danger">
-							<th scope="row">24-11-2018</th>
-							<td>IN00020</td>
-							<td>CU-005</td>
-							<td>Athula hardware</td>
-							<td>(50000)</td>
-							<td>-2</td>
-							<td><button class="btn btn-success btn-xs" type="button"
-									data-toggle="modal" data-target="#invModal">View</button>
+					<c:forEach var="invoice" items="${invoices}">
+					<c:if test="${invoice.duration<14}">
+						<c:set var="colours" value="primary"></c:set>
+					</c:if>
+					<c:if test="${invoice.duration<7}">
+						<c:set var="colours" value="warning"></c:set>
+					</c:if>
+					<c:if test="${invoice.duration<0}">
+						<c:set var="colours" value="danger"></c:set>
+					</c:if>
+					
+					
+						<tr class="${colours }">
+						<td>${invoice.date}</td>
+						<td>${invoice.invid}</td>
+						<td>${invoice.cusid}</td>
+						<td>${invoice.cusid}</td>
+						<td>${invoice.opcqun*invoice.opcup+invoice.ppcqun*invoice.ppcup}</td>
+						<td>${invoice.duration}</td>
+						<td><form><input type="text" hidden="true" value="${invoice.invid}" name="id"/>
+						<input type="submit" class="" value="Edit" /></form></td>
 						</tr>
-
-						<tr class="warning">
-							<th scope="row">11-12-2018</th>
-							<td>IN00021</td>
-							<td>CU-010</td>
-							<td>Pathirana hardware</td>
-							<td>(20000)</td>
-							<td>2</td>
-							<td><button class="btn btn-success btn-xs" type="button"
-									data-toggle="modal" data-target="#myModal">View</button>
-						</tr>
-
-						<tr class="success">
-							<th scope="row">03-03-2018</th>
-							<td>IN00022</td>
-							<td>CU-008</td>
-							<td>Nimal hardware</td>
-							<td>(30000)</td>
-							<td>7</td>
-							<td><button class="btn btn-success btn-xs" type="button"
-									data-toggle="modal" data-target="#myModal">View</button>
-						</tr>
-						<tr>
-							<th scope="row">03-12-2018</th>
-							<td>IN00023</td>
-							<td>CU-009</td>
-							<td>Priyantha hardware</td>
-							<td>(40000)</td>
-							<td>12</td>
-							<td><button class="btn btn-success btn-xs" type="button"
-									data-toggle="modal" data-target="#myModal">View</button>
-						</tr>
-						
-						<tr>
-							<th scope="row">24-11-2018</th>
-							<td>IN00020</td>
-							<td>CU-023</td>
-							<td>Athula hardware</td>
-							<td>(20000)</td>
-							<td>10</td>
-							<td><button class="btn btn-success btn-xs" type="button"
-									data-toggle="modal" data-target="#myModal">View</button>
-						</tr>
-
-						<tr>
-							<th scope="row">11-12-2018</th>
-							<td>IN00021</td>
-							<td>CU-019</td>
-							<td>CX hardware</td>
-							<td>(20000)</td>
-							<td>10</td>
-							<td><button class="btn btn-success btn-xs" type="button"
-									data-toggle="modal" data-target="#myModal">View</button>
-						</tr>
-
-						<tr >
-							<th scope="row">03-03-2018</th>
-							<td>IN00022</td>
-							<td>CU-019</td>
-							<td>CX hardware</td>
-							<td>(30000)</td>
-							<td>10</td>
-							<td><button class="btn btn-success btn-xs" type="button"
-									data-toggle="modal" data-target="#myModal">View</button>
-						</tr>
-						<tr>
-							<th scope="row">03-12-2018</th>
-							<td>IN00023</td>
-							<td>CU-021</td>
-							<td>Alan hardware</td>
-							<td>80000</td>
-							<td>08</td>
-							<td><button class="btn btn-success btn-xs" type="button"
-									data-toggle="modal" data-target="#myModal">View</button>
-						</tr>
-
-					</tbody>
-				</table>
+					</c:forEach> 
+					
+									</table>
 
 </div>
 </div>
