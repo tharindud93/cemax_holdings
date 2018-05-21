@@ -41,9 +41,10 @@ public class inventryController {
 	}
 	
 	@RequestMapping(value="serinventry" ,method=RequestMethod.GET)
-	public String serinventry() {
+	public String serinventry(Model model) {
+		model.addAttribute("inventries",inventryService.AllINventrys());
 		//inventryService.getinvbytoday();
-		return "/inventry/Dinvview";
+		return "/inventry/Dinvviewserch";
 	}
 	@RequestMapping(value="viewinventry" ,method=RequestMethod.GET)
 	public ModelAndView viewinventry(HttpServletRequest request,Model model,DailyInventry inventry) {

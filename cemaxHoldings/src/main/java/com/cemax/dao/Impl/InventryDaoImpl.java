@@ -49,7 +49,7 @@ public class InventryDaoImpl implements InventryDao {
 	@Override
 	public List<DailyInventry> AllINventrys() {
 		List<DailyInventry> inventrys;
-		inventrys=entityManager.createQuery("SELECT c FROM dinventry c").getResultList();
+		inventrys=entityManager.createQuery("SELECT c FROM dinventry c ORDER BY c.id desc").getResultList();
 		return inventrys;
 	}
 

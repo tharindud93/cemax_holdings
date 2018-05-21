@@ -109,13 +109,13 @@
 						<tr> 
 							<td><form:input type="text" class="form-control input-sm" id="qun1" path="opcqun" ></form:input></td>
 							<td>UltraTech (OPC) Cement 50Kg</td>
-							<td><form:input type="text" class="form-control input-sm" id="unip1" path="opcup" value="${inventry.opcmargin}"></form:input></td>
+							<td><form:input type="text" class="form-control input-sm" id="unip1" path="opcup" value="${inventry.opcprice+inventry.opcmargin}"></form:input></td>
 							<td><input type="text" class="form-control input-sm" id="amoun1"></input></td>
 						</tr>
 						<tr>
 							<td><form:input type="text" class="form-control input-sm" id="qun2" path="ppcqun"></form:input></td>
 							<td>UltraTech (PPC) Cement 50Kg</td>
-							<td><form:input type="text" class="form-control input-sm" id="unip2" path="ppcup" value="${inventry.ppcmargin}"></form:input></td>
+							<td><form:input type="text" class="form-control input-sm" id="unip2" path="ppcup" value="${inventry.ppcprice+inventry.ppcmargin}"></form:input></td>
 							<td><input type="text" class="form-control input-sm" id="amoun2"></input></td>
 						</tr>
 

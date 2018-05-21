@@ -87,7 +87,22 @@ $(document).ready(function() {
 								<th class="col-xs-1">PPC Price</th>	
 								<th class="col-xs-1">View Inventory</th>					
 							</tr>
-							</thead>						
+							</thead>
+							<c:forEach var="inventries" items="${inventries}">
+
+					
+					
+						<tr>
+						<td>${inventries.id}</td>
+						<td>${inventries.date}</td>
+						<td>${inventries.opcquan}</td>
+						<td>${inventries.opcprice}</td>
+						<td>${inventries.ppcquan}</td>
+						<td>${inventries.ppcprice}</td>
+						<td><form><input type="text" hidden="true" value="${inventries.id}" name="id"/>
+						<input type="submit" class="" value="Edit" /></form></td>
+						</tr>
+					</c:forEach> 						
 						</table>											
 					</div>
 			</div>				
