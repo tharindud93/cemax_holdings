@@ -29,7 +29,8 @@
 						
 						
 <script>	
-$(document).ready(function() {
+$(document).click(function() {
+ //   $( "#ajaxsearch" ).datepicker();
 	$('#ajaxsearch').autocomplete({		
 		serviceUrl: '${pageContext.request.contextPath}/getInventrys',
 		paramName: "invid",
@@ -108,7 +109,8 @@ $(document).ready(function() {
 			</div>				
 	</tiles:putAttribute>
 	</tiles:insertDefinition>
-
+<!-- 	  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
 <script src="<c:url value="/resources/core/jquery.autocomplete.min.js" />"></script>
 </body>
 </html>

@@ -31,19 +31,82 @@
 
  <tiles:insertDefinition name="defaultTemplate">
 	<tiles:putAttribute name="body">
+	
+	<script>	
+$(document).ready(function() {
+ //   $( "#ajaxsearch" ).datepicker();
+	$('#ajaxsearch').autocomplete({		
+		serviceUrl: '${pageContext.request.contextPath}/getInvoices',
+		paramName: "invid",
+		delimiter: ",",
+		onSearchStart: function (query) {			
+			$("#mytable td").remove();
+		},
+	   transformResult: function(response) {
+		  var suggesti= $.map($.parseJSON(response), function(item) {			
+		      return { value:[ item.date,item.invid,item.cusid,item.opcqun,item.opcup,item.ppcqun,item.ppcup,item.duration,item.due], data: item.invid };
+		   })		 
+			    var invoices =suggesti;
+			    var tabl = $("#mytable"),
+			      columns, i;
+			    
+			    if (!$.trim(invoices)){
+					document.getElementById("div2").innerHTML="<div class='alert alert-danger'>No Maches Found!!</div>"
+				}else{
+					document.getElementById("div2").innerHTML=""
+					
+				/* 	var color="";
+					switch (invoices[i]["value"][7]){
+					case <14:
+						color="primary";
+					break;
+					case <7:
+						color="warning";
+					break;
+					case <0:
+						color="danger";
+					break;
+					default:
+						color="primary";
+					
+					} */
+			    
+			  for (i = 0; i < invoices.length; i++) {				  
+			 //  var userd=invoices[i]["value"][1];
+			    tabl.append(
+			      '<tr>' + 
+			          '<td>' + invoices[i]["value"][0] + '</td>' + 
+			          '<td>' + invoices[i]["value"][1] + '</td>' +
+			          '<td>' + invoices[i]["value"][2] + '</td>' +
+			          '<td>' + invoices[i]["value"][2] + '</td>' +
+			          '<td>' + invoices[i]["value"][3] + '</td>' +
+			          '<td>' + invoices[i]["value"][7] + '</td>' +
+			          '<td>' + invoices[i]["value"][8] + '</td>' +
+					'<td>'+'<form action="viewinv">'+'<input type="text" hidden="true" value="'+ invoices[i]["value"][1]+'" name="id"/>'+
+						'<input type="submit" class="" value="View" />'+
+						'</form>'+'</td>'+
+			      '</tr>'
+			    );
+			  }	}   		   
+		   return suggesti;
+           }           
+	 });
+ }); 
+ </script>
+	
 	<div class="col-md-12" style="align: center">
 			<div class="panel panel-primary">
 				<div class="panel-heading">All Invioces</div>
 				<div class="col-md-5">
 				
 				 <br>
-				 <div class="input-group">
-  						<input type="text" class="form-control" placeholder="Search here ( Ex:IN00123 )">
-  						<span class="input-group-btn">
+				 <div class="col-md-04">
+  						<input type="text" class="form-control" id="ajaxsearch" placeholder="Search Invoice here....">
+  						<!--<span class="input-group-btn">
     					<button class="btn btn-primary" style="height:34px" type="submit">
-        					<i class="glyphicon glyphicon-search"></i>
+        					 <i class="glyphicon glyphicon-search"></i> 
    							 </button>
-  							</span>
+  							</span>-->
 					</div>
 					<br>
 				 </div>
@@ -53,8 +116,8 @@
 
 				<!-- Table start -->
 
-
-				<table class="table table-bordered">
+ <div id="div2"></div>
+				<table id="mytable" class="table input-sm">
 					<thead>
 						<tr>
 							<th scope="col">Date</th>
@@ -62,20 +125,21 @@
 							<th scope="col">Customer Id</th>
 							<th scope="col">C. Name</th>
 							<th scope="col">Value</th>
-							<th scope="col">Remain(days)</th>
+							<th scope="col">Given Duration</th>
+							<th scope="col">Remain days</th>
 							<th scope="col">Action</th>
 
 						</tr>
 					</thead>
 
 					<c:forEach var="invoice" items="${invoices}">
-					<c:if test="${invoice.duration<14}">
+					<c:if test="${invoice.due<14}">
 						<c:set var="colours" value="primary"></c:set>
 					</c:if>
-					<c:if test="${invoice.duration<7}">
+					<c:if test="${invoice.due<7}">
 						<c:set var="colours" value="warning"></c:set>
 					</c:if>
-					<c:if test="${invoice.duration<0}">
+					<c:if test="${invoice.due<0}">
 						<c:set var="colours" value="danger"></c:set>
 					</c:if>
 					
@@ -84,11 +148,12 @@
 						<td>${invoice.date}</td>
 						<td>${invoice.invid}</td>
 						<td>${invoice.cusid}</td>
-						<td>${invoice.cusid}</td>
+						<td>${cname.cname}</td>
 						<td>${invoice.opcqun*invoice.opcup+invoice.ppcqun*invoice.ppcup}</td>
 						<td>${invoice.duration}</td>
-						<td><form><input type="text" hidden="true" value="${invoice.invid}" name="id"/>
-						<input type="submit" class="" value="Edit" /></form></td>
+						<td>${invoice.due}</td>
+						<td><form action="viewinv"><input type="text" hidden="true" value="${invoice.invid}" name="id"/>
+						<input type="submit" class="" value="View" /></form></td>
 						</tr>
 					</c:forEach> 
 					
@@ -96,14 +161,11 @@
 
 </div>
 </div>
-		
 
-
-		
-	
 	<!-- Table End -->
 	
 </tiles:putAttribute>
 </tiles:insertDefinition>
 
+<script src="<c:url value="/resources/core/jquery.autocomplete.min.js" />"></script>
 </html>

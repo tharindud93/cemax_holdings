@@ -30,4 +30,15 @@ public class InvoiceServiceImpl implements InvoiceService{
 		return invoiceDao.AllInvoices();
 	}
 
+	@Override
+	public Invoice getInvById(String id) {
+		return invoiceDao.getInvById(id);
+	
+	}
+
+	@Override
+	public List<Invoice> todayInvoices() {
+		return invoiceDao.todayInvoices();
+	}
+
 }

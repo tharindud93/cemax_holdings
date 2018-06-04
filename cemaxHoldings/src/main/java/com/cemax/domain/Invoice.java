@@ -9,11 +9,13 @@ import javax.persistence.Id;
 public class Invoice {
 	@Id
 	@Column
-	private int invid;
+	private String invid;
 	@Column
 	private int cusid;
 	@Column
 	private int duration;
+	@Column
+	private int due;
 	@Column
 	private int delnoteno;
 	@Column
@@ -31,10 +33,10 @@ public class Invoice {
 	@Column
 	private String time;
 	
-	public int getInvid() {
+	public String getInvid() {
 		return invid;
 	}
-	public void setInvid(int invid) {
+	public void setInvid(String invid) {
 		this.invid = invid;
 	}
 	public int getCusid() {
@@ -97,5 +99,12 @@ public class Invoice {
 	public int getDuration(){
 		return duration;
 	}
+	public int getDue() {
+		return due;
+	}
+	public void setDue(int due) {
+		this.due = due;
+	}
+	
 	
 }

@@ -19,7 +19,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.cemax.domain.Customer;
 import com.cemax.domain.DailyInventry;
+import com.cemax.domain.Invoice;
 import com.cemax.service.InventryService;
+import com.cemax.service.InvoiceService;
 
 @Controller
 public class inventryController {
@@ -27,6 +29,8 @@ public class inventryController {
 	
 	@Autowired
 	InventryService inventryService;
+	@Autowired
+	InvoiceService invoiceService;
 
 	@RequestMapping(value="dinventry" ,method=RequestMethod.GET)
 	public ModelAndView dailyinventry(@ModelAttribute("dailyInventry") DailyInventry dailyInventry) {
@@ -73,4 +77,20 @@ public class inventryController {
 	public String dailysummry() {
 		return "Dsum";
 	}
+	
+/*	@RequestMapping(value = "/gettodayinv", method = RequestMethod.GET)
+	public @ResponseBody
+	List<Invoice> gettodayInv(@RequestParam String invoid, HttpServletRequest request,HttpServletResponse response) {
+
+		List<Invoice> result = new ArrayList<Invoice>();
+		List<Invoice> data = invoiceService.todayInvoices();
+		
+		for (Invoice tag  : data) {
+			if (tag.getDate().contains(invoid)) {
+				result.add(tag);
+			}
+		}
+		
+		return result;
+	}*/
 }
