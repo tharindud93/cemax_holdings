@@ -1,8 +1,12 @@
 package com.cemax.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity(name="customer")
 public class Customer {
@@ -28,6 +32,8 @@ private String owaddress;
 private String owcno;
 @Column
 private boolean active;
+@OneToMany(mappedBy = "customerid",orphanRemoval = true )
+private List<Invoice> invoices=new ArrayList<>(); 
 
 public String getCid() {
 	return cid;
@@ -89,6 +95,13 @@ public boolean isActive() {
 public void setActive(boolean active) {
 	this.active = active;
 }
+public List<Invoice> getInvoices() {
+	return invoices;
+}
+public void setInvoices(List<Invoice> invoices) {
+	this.invoices = invoices;
+}
+
 
 
 }

@@ -3,10 +3,18 @@ package com.cemax.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 
 
 @Entity(name="invoice")
 public class Invoice {
+	
+
+	
 	@Id
 	@Column
 	private int invid;
@@ -14,6 +22,8 @@ public class Invoice {
 	private int cusid;
 	@Column
 	private int duration;
+	@Column
+	private int remain;
 	@Column
 	private int delnoteno;
 	@Column
@@ -30,6 +40,8 @@ public class Invoice {
 	private String date;;
 	@Column
 	private String time;
+	@Column
+	private Customer customerid;
 	
 	public int getInvid() {
 		return invid;
@@ -96,6 +108,14 @@ public class Invoice {
 	}
 	public int getDuration(){
 		return duration;
+	}
+	@ManyToOne
+	@JoinColumn(name="customerId")
+	public Customer getCustomer() {
+		return customerid;
+	}
+	public void setCustomer(Customer cus) {
+		this.customerid=cus;
 	}
 	
 }
