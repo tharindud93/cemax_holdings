@@ -78,10 +78,9 @@ $(document).ready(function() {
 			          '<td>' + invoices[i]["value"][0] + '</td>' + 
 			          '<td>' + invoices[i]["value"][1] + '</td>' +
 			          '<td>' + invoices[i]["value"][2] + '</td>' +
-			          '<td>' + invoices[i]["value"][2] + '</td>' +
-			          '<td>' + invoices[i]["value"][3] + '</td>' +
+			          '<td>' + (invoices[i]["value"][3]*invoices[i]["value"][4]+invoices[i]["value"][5]*invoices[i]["value"][6]) + '</td>' +
 			          '<td>' + invoices[i]["value"][7] + '</td>' +
-			          '<td>' + invoices[i]["value"][8] + '</td>' +
+			          '<td>' + invoices[i]["value"][7] + '</td>' +
 					'<td>'+'<form action="viewinv">'+'<input type="text" hidden="true" value="'+ invoices[i]["value"][1]+'" name="id"/>'+
 						'<input type="submit" class="" value="View" />'+
 						'</form>'+'</td>'+
@@ -123,7 +122,6 @@ $(document).ready(function() {
 							<th scope="col">Date</th>
 							<th scope="col">Invoice No</th>
 							<th scope="col">Customer Id</th>
-							<th scope="col">C. Name</th>
 							<th scope="col">Value</th>
 							<th scope="col">Given Duration</th>
 							<th scope="col">Remain days</th>
@@ -133,13 +131,13 @@ $(document).ready(function() {
 					</thead>
 
 					<c:forEach var="invoice" items="${invoices}">
-					<c:if test="${invoice.due<14}">
+					<c:if test="${invoice.duration<14}">
 						<c:set var="colours" value="primary"></c:set>
 					</c:if>
-					<c:if test="${invoice.due<7}">
+					<c:if test="${invoice.duration<7}">
 						<c:set var="colours" value="warning"></c:set>
 					</c:if>
-					<c:if test="${invoice.due<0}">
+					<c:if test="${invoice.duration<0}">
 						<c:set var="colours" value="danger"></c:set>
 					</c:if>
 					
@@ -148,10 +146,9 @@ $(document).ready(function() {
 						<td>${invoice.date}</td>
 						<td>${invoice.invid}</td>
 						<td>${invoice.cusid}</td>
-						<td>${cname.cname}</td>
 						<td>${invoice.opcqun*invoice.opcup+invoice.ppcqun*invoice.ppcup}</td>
 						<td>${invoice.duration}</td>
-						<td>${invoice.due}</td>
+						<td>${invoice.duration}</td>
 						<td><form action="viewinv"><input type="text" hidden="true" value="${invoice.invid}" name="id"/>
 						<input type="submit" class="" value="View" /></form></td>
 						</tr>

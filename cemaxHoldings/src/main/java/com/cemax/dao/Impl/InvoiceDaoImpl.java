@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import com.cemax.dao.InvoiceDao;
 import com.cemax.domain.Customer;
+import com.cemax.domain.DailyInventry;
 import com.cemax.domain.Invoice;
 
 @Repository("invoiceDao")
@@ -35,7 +36,7 @@ public class InvoiceDaoImpl implements InvoiceDao{
 	@Override
 	public List<Invoice> AllInvoices() {
 		List<Invoice> invoices;
-		invoices=entityManager.createQuery("SELECT c FROM invoice c ORDER BY c.due").getResultList();
+		invoices=entityManager.createQuery("SELECT c FROM invoice c ORDER BY c.duration").getResultList();
 		return invoices;
 	}
 
@@ -53,4 +54,12 @@ public class InvoiceDaoImpl implements InvoiceDao{
 		return invoices;
 	}
 
+
+	@Override
+	public int updateRemain(int opcremain, int ppcremain) {
+		DailyInventry inventry=(DailyInventry) entityManager.createQuery("SELECT c FROM dinventry c WHERE c.date=:today").setParameter("today",today).getSingleResult();
+		inventry.setOpcremain(opcremain);
+		inventry.setPpcremain(ppcremain);
+		return 0;
+	}
 }

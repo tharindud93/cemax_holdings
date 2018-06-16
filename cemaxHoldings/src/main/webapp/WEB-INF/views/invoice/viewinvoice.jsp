@@ -22,9 +22,14 @@
 				<div class="panel panel-primary">
 					<div class="panel-heading">Customer Details</div>
 					<div class="panel-body">
-					
-					<form:hidden path="date" value="${today1}"></form:hidden>
-					<form:hidden path="time" value="${now}"></form:hidden>
+				<div class="col-md-6">
+						<label>Date Issued:</label>
+						<form:input type="text" class="form-control input-sm" name="invid" path="date" ></form:input>
+				</div>	
+				<div class="col-md-6">
+						<label>Issued Time</label>
+						<form:input type="text" class="form-control input-sm" name="invid" path="time" ></form:input>
+				</div>
 				<div class="col-md-6">
 						<label>Invoice No:</label>
 						<form:input type="text" class="form-control input-sm" name="invid" path="invid" ></form:input>

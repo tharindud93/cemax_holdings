@@ -41,4 +41,13 @@ public class InvoiceServiceImpl implements InvoiceService{
 		return invoiceDao.todayInvoices();
 	}
 
+	@Override
+	public int updateRemain(int opcremain, int ppcremain) {
+		return invoiceDao.updateRemain(opcremain,ppcremain);
+	}
+
+	
+	
+	
+
 }

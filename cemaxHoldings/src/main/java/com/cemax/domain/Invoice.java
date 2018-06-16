@@ -1,10 +1,13 @@
 package com.cemax.domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -17,13 +20,15 @@ public class Invoice {
 	
 	@Id
 	@Column
-	private int invid;
+	private String invid;
+/*	@ManyToOne(fetch=FetchType.LAZY,cascade=CascadeType.PERSIST)
+	@JoinColumn*/
 	@Column
 	private int cusid;
 	@Column
 	private int duration;
 	@Column
-	private int remain;
+	private int remaindays;
 	@Column
 	private int delnoteno;
 	@Column
@@ -40,13 +45,16 @@ public class Invoice {
 	private String date;;
 	@Column
 	private String time;
-	@Column
-	private Customer customerid;
+	@Transient 
+	private int opcremain;
+	@Transient 
+	private int ppcremain;
+
 	
-	public int getInvid() {
+	public String getInvid() {
 		return invid;
 	}
-	public void setInvid(int invid) {
+	public void setInvid(String invid) {
 		this.invid = invid;
 	}
 	public int getCusid() {
@@ -109,13 +117,23 @@ public class Invoice {
 	public int getDuration(){
 		return duration;
 	}
-	@ManyToOne
-	@JoinColumn(name="customerId")
-	public Customer getCustomer() {
-		return customerid;
+	public int getOpcremain() {
+		return opcremain;
 	}
-	public void setCustomer(Customer cus) {
-		this.customerid=cus;
+	public void setOpcremain(int opcremain) {
+		this.opcremain = opcremain;
 	}
-	
+	public int getPpcremain() {
+		return ppcremain;
+	}
+	public void setPpcremain(int ppcremain) {
+		this.ppcremain = ppcremain;
+	}
+	public int getRemaindays() {
+		return remaindays;
+	}
+	public void setRemaindays(int remaindays) {
+		this.remaindays = remaindays;
+	}
+
 }

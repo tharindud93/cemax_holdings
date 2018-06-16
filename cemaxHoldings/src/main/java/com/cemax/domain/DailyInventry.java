@@ -28,6 +28,10 @@ public class DailyInventry {
 	@Column
 	private int ppcprice;
 	@Column
+	private int opcremain;
+	@Column
+	private int ppcremain;
+	@Column
 	private int ppcmargin;
 	@Column
 	private int transport;
@@ -85,6 +89,18 @@ public class DailyInventry {
 	}
 	public void setTransport(int transport) {
 		this.transport = transport;
+	}
+	public int getOpcremain() {
+		return opcremain;
+	}
+	public void setOpcremain(int opcremain) {
+		this.opcremain = opcremain;
+	}
+	public int getPpcremain() {
+		return ppcremain;
+	}
+	public void setPpcremain(int ppcremain) {
+		this.ppcremain = ppcremain;
 	}
 	
 	

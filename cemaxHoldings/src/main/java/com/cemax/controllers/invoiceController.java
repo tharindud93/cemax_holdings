@@ -39,19 +39,15 @@ public class invoiceController {
 
 	@GetMapping(value="invoice")
 	public ModelAndView invoiceadd(@ModelAttribute("invoice") Invoice invoice,Model model) {
-		//try {
+		try {
 		DailyInventry inv=inventryService.getinvbytoday();
-		System.out.println(inv.getOpcmargin());
-		System.out.println(inv.getPpcmargin());
-
 		model.addAttribute("inventry",inv);
 
 		return new ModelAndView("/invoice/invoice","command",invoice);
-		/*} catch (NoResultException e) {
-
-			
-			return new ModelAndView("/invoice/invoice","command",invoice);
-		}*/
+		} catch (NoResultException e) {
+			System.out.println(e);
+			return new ModelAndView("/invoice/error");
+		}
 	}
 	
 	@RequestMapping(value="error")
@@ -61,7 +57,13 @@ public class invoiceController {
 	}
 	@RequestMapping(value="addinvoicepro",method=RequestMethod.POST)
 	public ModelAndView addinvpro(@ModelAttribute("invoice") Invoice invoice) {
+		invoice.setRemaindays(invoice.getDuration());
 		invoiceService.addInvoice(invoice);
+		int opcremain=invoice.getOpcremain();
+		int ppcremain=invoice.getPpcremain();
+		System.out.println(opcremain);
+		System.out.println(ppcremain);
+		invoiceService.updateRemain(opcremain,ppcremain);
 		
 		return new ModelAndView("redirect:"+"invoice?success=true");	
 	}
@@ -104,7 +106,7 @@ public class invoiceController {
 	public ModelAndView viewinvoice(HttpServletRequest request,Model model,Invoice invoice) {
 		invoice=invoiceService.getInvById(request.getParameter("id"));
 		System.out.println(request.getParameter("id"));
-		String cid=Integer.toString(invoice.getCusid());
+
 		//Customer cus =customerService.getCustomerById(cid); 
 		//System.out.println(cus.getCname());
 		//model.addAttribute("cname",cus);

@@ -40,6 +40,8 @@ public class inventryController {
 	
 	@RequestMapping(value="dinventrypro" ,method=RequestMethod.POST)
 	public ModelAndView dailyinventrypro(@ModelAttribute("dailyInventry") DailyInventry dailyInventry) {
+		dailyInventry.setOpcremain(dailyInventry.getOpcquan());
+		dailyInventry.setPpcremain(dailyInventry.getPpcquan());
 		inventryService.adddinventry(dailyInventry);
 		return new ModelAndView("redirect:"+"dinventry?success=true");
 	}

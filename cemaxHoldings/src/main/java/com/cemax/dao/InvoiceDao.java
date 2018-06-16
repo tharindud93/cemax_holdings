@@ -10,4 +10,6 @@ public interface InvoiceDao {
 	public List<Invoice> AllInvoices();
 	public Invoice getInvById(String id);
 	public List<Invoice> todayInvoices();
+	public int updateRemain(int opcremain,int ppcremain);
+
 }

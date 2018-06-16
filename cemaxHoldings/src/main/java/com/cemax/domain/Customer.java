@@ -3,8 +3,10 @@ package com.cemax.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -12,7 +14,6 @@ import javax.persistence.OneToMany;
 public class Customer {
 @Id
 @Column
-
 private String cid;
 @Column
 private String cname;
@@ -32,8 +33,8 @@ private String owaddress;
 private String owcno;
 @Column
 private boolean active;
-@OneToMany(mappedBy = "customerid",orphanRemoval = true )
-private List<Invoice> invoices=new ArrayList<>(); 
+/*@OneToMany(fetch = FetchType.EAGER,mappedBy = "cusid",orphanRemoval = true,cascade=CascadeType.PERSIST )
+private List<Invoice> invoices=new ArrayList<>(); */
 
 public String getCid() {
 	return cid;
@@ -95,12 +96,12 @@ public boolean isActive() {
 public void setActive(boolean active) {
 	this.active = active;
 }
-public List<Invoice> getInvoices() {
+/*public List<Invoice> getInvoices() {
 	return invoices;
 }
 public void setInvoices(List<Invoice> invoices) {
 	this.invoices = invoices;
-}
+}*/
 
 
 
