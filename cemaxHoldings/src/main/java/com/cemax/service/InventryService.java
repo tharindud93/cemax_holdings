@@ -11,4 +11,5 @@ public interface InventryService {
 	public List<DailyInventry> AllINventrys();
 	public DailyInventry getinvbyday(String day);
 
+
 }

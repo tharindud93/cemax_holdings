@@ -44,7 +44,7 @@ $(document).ready(function() {
 		},
 	   transformResult: function(response) {
 		  var suggesti= $.map($.parseJSON(response), function(item) {			
-		      return { value:[ item.date,item.invid,item.cusid,item.opcqun,item.opcup,item.ppcqun,item.ppcup,item.duration,item.due], data: item.invid };
+		      return { value:[ item.date,item.invid,item.cusid,item.opcqun,item.opcup,item.ppcqun,item.ppcup,item.duration,item.remaindays], data: item.invid };
 		   })		 
 			    var invoices =suggesti;
 			    var tabl = $("#mytable"),
@@ -80,7 +80,7 @@ $(document).ready(function() {
 			          '<td>' + invoices[i]["value"][2] + '</td>' +
 			          '<td>' + (invoices[i]["value"][3]*invoices[i]["value"][4]+invoices[i]["value"][5]*invoices[i]["value"][6]) + '</td>' +
 			          '<td>' + invoices[i]["value"][7] + '</td>' +
-			          '<td>' + invoices[i]["value"][7] + '</td>' +
+			          '<td>' + invoices[i]["value"][8] + '</td>' +
 					'<td>'+'<form action="viewinv">'+'<input type="text" hidden="true" value="'+ invoices[i]["value"][1]+'" name="id"/>'+
 						'<input type="submit" class="" value="View" />'+
 						'</form>'+'</td>'+
@@ -148,7 +148,7 @@ $(document).ready(function() {
 						<td>${invoice.cusid}</td>
 						<td>${invoice.opcqun*invoice.opcup+invoice.ppcqun*invoice.ppcup}</td>
 						<td>${invoice.duration}</td>
-						<td>${invoice.duration}</td>
+						<td>${invoice.remaindays}</td>
 						<td><form action="viewinv"><input type="text" hidden="true" value="${invoice.invid}" name="id"/>
 						<input type="submit" class="" value="View" /></form></td>
 						</tr>

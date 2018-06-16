@@ -46,6 +46,23 @@ public class InvoiceServiceImpl implements InvoiceService{
 		return invoiceDao.updateRemain(opcremain,ppcremain);
 	}
 
+	@Override
+	public int updateRemain(Invoice inv) {
+		return invoiceDao.updateRemaindays(inv);
+	}
+
+	@Override
+	public String getflag() {
+		return invoiceDao.getflag();
+		
+	}
+
+	@Override
+	public void updateflag() {
+		invoiceDao.updateflag();
+		
+	}
+
 	
 	
 	

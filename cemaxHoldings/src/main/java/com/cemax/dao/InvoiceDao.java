@@ -11,5 +11,8 @@ public interface InvoiceDao {
 	public Invoice getInvById(String id);
 	public List<Invoice> todayInvoices();
 	public int updateRemain(int opcremain,int ppcremain);
+	public int updateRemaindays(Invoice inv);
+	public String getflag();
+	public void updateflag();
 
 }

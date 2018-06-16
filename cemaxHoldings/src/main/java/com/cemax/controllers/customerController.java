@@ -92,8 +92,10 @@ public class customerController {
 			Iterable<Customer> data = customerService.Allcustomer();
 			
 			for (Customer tag  : data) {
-				if (tag.getCid().contains(cus)||tag.getCname().contains(cus)) {
+				if( tag.isActive()) {
+				if (tag.getCid().contains(cus)||tag.getCname().contains(cus) ) {
 					result.add(tag);
+				}
 				}
 			}
 			

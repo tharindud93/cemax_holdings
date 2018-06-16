@@ -40,6 +40,7 @@ public class InventryServiceImpl implements InventryService {
 	public DailyInventry getinvbyday(String day) {
 		return inventryDao.getinvbyday(day);
 	}
+
 	
 
 }

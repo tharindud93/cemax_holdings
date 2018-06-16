@@ -8,7 +8,7 @@
 </head>
 <body >
 <%
-	SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+	SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy");
 	SimpleDateFormat ti = new SimpleDateFormat("HH:mm:ss");
 
 %>
@@ -77,7 +77,7 @@
 				</div>
 				<div class="col-md-6">
 						<label>Customer Id:</label>
-						<form:input type="text" class="form-control input-sm" id="cusid" name="cusid" path="cusid" ></form:input>
+						<form:input type="text" class="form-control input-sm" id="cusid" name="cusid" path="cusid" readonly="true"></form:input>
 						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#cusSearchModal">Get Customer</button>
 				</div>
 				<br> 
