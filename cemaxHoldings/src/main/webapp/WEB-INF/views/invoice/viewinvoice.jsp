@@ -15,7 +15,7 @@
 <c:set var="today1" value="<%=sdf1.format(new Date())%>" />
 <c:set var="now" value="<%=ti.format(new Date())%>" />
 	 <tiles:insertDefinition name="defaultTemplate">
-	<tiles:putAttribute name="body">
+	<tiles:putAttribute  name="body">
 	<form:form class="form:input-sm" action="addinvoicepro" method="post">
 		<div class="col-md-12" style="align: center">
 			<div class="panel panel-group">
