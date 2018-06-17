@@ -76,8 +76,11 @@ public class inventryController {
 		}
 	
 	@RequestMapping("dsum")
-	public String dailysummry() {
-		return "Dsum";
+	public ModelAndView allinvoices(@ModelAttribute("invoice") Invoice invoice,Model model ) {
+		model.addAttribute("invoices",invoiceService.todayInvoices());
+		model.addAttribute("inventry",inventryService.getinvbytoday());
+		return new ModelAndView("/inventry/Dsum","command",invoice);
+		
 	}
 	
 /*	@RequestMapping(value = "/gettodayinv", method = RequestMethod.GET)

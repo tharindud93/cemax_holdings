@@ -100,8 +100,8 @@ $(document).click(function() {
 						<td>${inventries.opcprice}</td>
 						<td>${inventries.ppcquan}</td>
 						<td>${inventries.ppcprice}</td>
-						<td><form><input type="text" hidden="true" value="${inventries.id}" name="id"/>
-						<input type="submit" class="" value="Edit" /></form></td>
+						<td><form action="viewinventry"><input type="text" hidden="true" value="${inventries.date}" name="date"/>
+						<input type="submit" class="" value="View" /></form></td>
 						</tr>
 					</c:forEach> 						
 						</table>											

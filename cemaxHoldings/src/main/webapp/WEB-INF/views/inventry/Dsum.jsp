@@ -1,4 +1,8 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ page import="java.text.SimpleDateFormat" import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -21,11 +25,13 @@
 		<div class="panel-body">
 		<div class=" col-md-5">
 		<label>Total Units:</label>
-		<input type="text" class="form-control" value="480">
+		<input type="text" class="form-control" value="${inventry.opcquan+inventry.ppcquan}">
 		</div>
 		<div class=" col-md-5">
 		<label>Total Cost(Rs):</label>
-		<input type="text" class="form-control" value="230000">
+		<input type="text" class="form-control" value="${inventry.opcprice* inventry.opcquan+inventry.ppcquan*inventry.ppcprice}">
+		<form action="viewinventry"><input type="text" hidden="true" value="${inventry.date}" name="date"/>
+						<input type="submit" class="" value="View Inventry" /></form>
 		</div>
 		<div class=" col-md-5">
 		<label>Total Profit(Rs):</label>
@@ -38,78 +44,43 @@
 				<div class="col-md-5">
 				
 				 <br>
-				 <!-- <div class="input-group">
-  						<input type="text" class="form-control" placeholder="Search here ( Ex:IN00123 )">
-  						<span class="input-group-btn">
-    					<button class="btn btn-primary" style="height:34px" type="submit">
-        					<i class="glyphicon glyphicon-search"></i>
-   							 </button>
-  							</span>
-					</div> -->
+
 					<br>
 				 </div>
-
-
 				<br>
 
 				<!-- Table start -->
 
 
-				<table class="table table-bordered">
+				<table id="mytable" class="table input-sm">
 					<thead>
 						<tr>
-							
+							<th scope="col">Date</th>
 							<th scope="col">Invoice No</th>
 							<th scope="col">Customer Id</th>
-							<th scope="col">C. Name</th>
-							<th scope="col">Quantity</th>
-							<th scope="col">Price</th>
-							<th scope="col">Profit</th>
+							<th scope="col">Value</th>
+							<th scope="col">Given Duration</th>
+							<th scope="col">Action</th>
 
 						</tr>
 					</thead>
 
-					<tbody>
+					<c:forEach var="invoice" items="${invoices}">
 						<tr>
-							
-							<td>IN00020</td>
-							<td>CU-005</td>
-							<td>Athula hardware</td>
-							<td>200</td>
-							<td>16000</td>
-							<td>10000</td>
-							
-							</tr>
-
-						<tr>
-							
-							<td>IN00021</td>
-							<td>CU-010</td>
-							<td>Pathirana hardware</td>
-							<td>50</td>
-							<td>24000</td>
-							<td>12000</td>
-
-						<tr>
-							
-							<td>IN00022</td>
-							<td>CU-008</td>
-							<td>Nimal hardware</td>
-							<td>230</td>
-							<td>34000</td>
-							<td>25000</td>
-							</tr>
-						
-					</tbody>
+						<td>${invoice.date}</td>
+						<td>${invoice.invid}</td>
+						<td>${invoice.cusid}</td>
+						<td>${invoice.opcqun*invoice.opcup+invoice.ppcqun*invoice.ppcup}</td>
+						<td>${invoice.duration}</td>
+						<td><form action="viewinv"><input type="text" hidden="true" value="${invoice.invid}" name="id"/>
+						<input type="submit" class="" value="View" /></form></td>
+						</tr>
+					</c:forEach> 
+					
 				</table>
 
 </div>
 </div>
-		
-
-
-		
-	
 	<!-- Table End -->
 	
 </tiles:putAttribute>

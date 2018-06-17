@@ -97,4 +97,5 @@ public class InvoiceDaoImpl implements InvoiceDao{
 		flag.setFlag(today);
 		entityManager.merge(flag);
 	}
+
 }
