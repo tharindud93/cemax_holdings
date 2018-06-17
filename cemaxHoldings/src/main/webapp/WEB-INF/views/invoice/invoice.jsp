@@ -108,14 +108,14 @@
 							<th>Amount</th>
 						</tr>
 						<tr>
-							<td><form:input id="opcremainL" path="opcremain" value="${inventry.opcremain}"></form:input> <input type="text" hidden="true" id="opcremain" value="${inventry.opcremain}"/></td> 
+							<td><form:input id="opcremainL" class="form-control" path="opcremain" value="${inventry.opcremain}" readonly="true"></form:input> <input type="text" hidden="true" id="opcremain" value="${inventry.opcremain}"/></td> 
 							<td><form:input type="text" class="form-control input-sm" id="opcquan" path="opcqun" onkeyup="opcrem(this,document.getElementById('opcremain'))"></form:input></td>
 							<td>UltraTech (OPC) Cement 50Kg</td>
 							<td><form:input type="text" class="form-control input-sm" id="unip1" path="opcup" value="${inventry.opcprice+inventry.opcmargin}"></form:input></td>
 							<td><input type="text" class="form-control input-sm" id="amoun1"></input></td>
 						</tr>
 						<tr>
-							<td><form:input id="ppcremainL" path="ppcremain" value="${inventry.ppcremain}"></form:input> <input type="text" hidden="true" id="ppcremain" value="${inventry.ppcremain}"/></td>
+							<td><form:input id="ppcremainL" class="form-control" path="ppcremain" value="${inventry.ppcremain}" readonly="true"></form:input> <input type="text" hidden="true" id="ppcremain" value="${inventry.ppcremain}"/></td>
 							<td><form:input type="text" class="form-control input-sm" id="ppcquan" path="ppcqun" onkeyup="ppcrem(this,document.getElementById('ppcremain'))"></form:input></td>
 							<td>UltraTech (PPC) Cement 50Kg</td>
 							<td><form:input type="text" class="form-control input-sm" id="unip2" path="ppcup" value="${inventry.ppcprice+inventry.ppcmargin}"></form:input></td>

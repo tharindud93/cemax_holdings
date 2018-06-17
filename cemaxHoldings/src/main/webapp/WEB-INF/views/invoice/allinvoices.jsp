@@ -131,13 +131,13 @@ $(document).ready(function() {
 					</thead>
 
 					<c:forEach var="invoice" items="${invoices}">
-					<c:if test="${invoice.duration<14}">
+					<c:if test="${invoice.remaindays<=14}">
 						<c:set var="colours" value="primary"></c:set>
 					</c:if>
-					<c:if test="${invoice.duration<7}">
+					<c:if test="${invoice.remaindays<7}">
 						<c:set var="colours" value="warning"></c:set>
 					</c:if>
-					<c:if test="${invoice.duration<0}">
+					<c:if test="${invoice.remaindays<0}">
 						<c:set var="colours" value="danger"></c:set>
 					</c:if>
 					

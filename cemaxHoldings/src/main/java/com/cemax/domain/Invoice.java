@@ -24,7 +24,7 @@ public class Invoice {
 /*	@ManyToOne(fetch=FetchType.LAZY,cascade=CascadeType.PERSIST)
 	@JoinColumn*/
 	@Column
-	private int cusid;
+	private String cusid;
 	@Column
 	private int duration;
 	@Column
@@ -57,10 +57,10 @@ public class Invoice {
 	public void setInvid(String invid) {
 		this.invid = invid;
 	}
-	public int getCusid() {
+	public String getCusid() {
 		return cusid;
 	}
-	public void setCusid(int cusid) {
+	public void setCusid(String cusid) {
 		this.cusid = cusid;
 	}
 	public int getDelnoteno() {

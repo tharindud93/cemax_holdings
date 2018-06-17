@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 
 import com.cemax.domain.Customer;
 import com.cemax.domain.Invoice;
+import com.cemax.service.CustomerService;
 import com.cemax.service.InvoiceService;
 
 @Component
@@ -23,6 +24,8 @@ public class AllComponent {
 	
 	@Autowired
 	InvoiceService invoiceService;
+	@Autowired
+	CustomerService customerService;
 	
 	@PostConstruct
 	public void remainUpdate() {
@@ -32,6 +35,11 @@ public class AllComponent {
 		Iterable<Invoice> data = invoiceService.AllInvoices();
 		for (Invoice tag  : data) {
 			invoiceService.updateRemain(tag);
+			if(tag.getRemaindays()<=0) {
+				System.out.println("inactive come"+tag.getCusid());
+				customerService.inactiveCustomer(tag);
+				System.out.println("inactive finfished");
+			}
 			}
 		invoiceService.updateflag();
 	}

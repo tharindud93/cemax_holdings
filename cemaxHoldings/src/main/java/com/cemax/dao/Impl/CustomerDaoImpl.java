@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import com.cemax.dao.CustomerDao;
 import com.cemax.domain.Customer;
+import com.cemax.domain.Invoice;
 
 @Repository("customerDao")
 public class CustomerDaoImpl implements CustomerDao {
@@ -64,6 +65,19 @@ public class CustomerDaoImpl implements CustomerDao {
 		Iterable<Customer> customers;
 		customers=entityManager.createQuery("SELECT c FROM customer C").getResultList();
 		return customers;
+	}
+
+
+	@Override
+	public void inactiveCustomer(Invoice tag) {
+		String cusid=tag.getCusid();
+		
+		System.out.println("inmeth"+cusid);
+		Customer cus=entityManager.find(Customer.class, cusid);
+		System.out.println(cus.getCname());
+		cus.setActive(false);
+		//entityManager.merge(cus);
+		
 	}
 	
 }

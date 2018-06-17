@@ -40,7 +40,7 @@ public class InvoiceDaoImpl implements InvoiceDao{
 	@Override
 	public List<Invoice> AllInvoices() {
 		List<Invoice> invoices;
-		invoices=entityManager.createQuery("SELECT c FROM invoice c ORDER BY c.duration").getResultList();
+		invoices=entityManager.createQuery("SELECT c FROM invoice c ORDER BY c.remaindays").getResultList();
 		return invoices;
 	}
 

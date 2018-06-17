@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.cemax.dao.CustomerDao;
 import com.cemax.domain.Customer;
+import com.cemax.domain.Invoice;
 import com.cemax.service.CustomerService;
 import org.springframework.context.annotation.ScopedProxyMode;
 
@@ -43,6 +44,12 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public Iterable<Customer> Allcustomer() {
 		return customerdao.Allcustomer();
+	}
+
+	@Override
+	public void inactiveCustomer(Invoice tag) {
+		customerdao.inactiveCustomer(tag);
+		
 	}
 	
 	
