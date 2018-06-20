@@ -22,6 +22,10 @@ public class User {
 	private String pass;
 	@Column
 	private String repass;
+	@Column
+	private boolean loginstatus;
+	@Column 
+	private String role;
 	
 	
 	
@@ -67,6 +71,18 @@ public class User {
 	}
 	public void setRepass(String repass) {
 		this.repass = repass;
+	}
+	public boolean isLoginstatus() {
+		return loginstatus;
+	}
+	public void setLoginstatus(boolean loginstatus) {
+		this.loginstatus = loginstatus;
+	}
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 	

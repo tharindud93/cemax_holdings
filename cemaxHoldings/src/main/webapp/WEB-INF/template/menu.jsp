@@ -50,7 +50,15 @@
 				<li><a class="navbar-nav" href="/cemaxHoldings/allcredits">Outstandings and Debits</a></li>
 				<li><a class="navbar-nav" href="/cemaxHoldings/allcredits">Credits</a></li>
 				<li><a class="navbar-nav" href="/cemaxHoldings/dsum">Daily Summary</a></li>
-				<li><a class="navbar-nav" href="/cemaxHoldings/"></a></li>
+				
+				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">User
+					<span class="caret"></span>
+					<!-- <span style="font-size:16px;" class="pull-right hidden-xs showopacity"></span> --></a>
+					<ul class="dropdown-menu forAnimate" role="menu">
+					<li><a class="navbar-nav" href="/cemaxHoldings/adduser">Add User</a></li>
+					<li><a class="navbar-nav" href="/cemaxHoldings/searchEdiuser">Serch/Edit User</a></li>
+					</ul>
+					</li>
 			</ul>
 		</div>
 	</div>

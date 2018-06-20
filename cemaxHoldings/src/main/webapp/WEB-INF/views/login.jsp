@@ -1,4 +1,8 @@
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%><script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link rel="stylesheet" type="text/css" href="resources/login.css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -13,35 +17,6 @@
 
 
 
-<!-- Where all the magic happens -->
-<!-- LOGIN FORM -->
-<!-- <div class="text-center" style="padding:50px 0">
-	<div class="logo">login</div>
-	Main Form
-	<div class="login-form-1">
-		<form id="login-form" class="text-left">
-			<div class="login-form-main-message"></div>
-			
-				<div class="login-group">
-					<div class="form-group col-md-5">
-						<label >Username</label>
-						<input type="text" class="form-control"  placeholder="username">
-					</div>
-					<div class="col-md-12"></div>
-					<div class="form-group col-md-5">
-						<label >Password</label>
-						<input type="password" class="form-control"  placeholder="password">
-					</div>
-					
-				</div>
-				<button type="submit" value="Submit" class="btn-info col-md-3" style="height: 50px"></button>
-			
-			
-		</form>
-	</div>
-	end:Main Form
-</div> -->
-
 <div class="container main-section">
 	<div class="row">
 		<div class="col-md-12 text-center user-login-header">
@@ -55,15 +30,26 @@
 				<div class="col-md-12 col-sm-12 col-xs-12 user-image-section">
 					<img src="resources/img/businessman.png">
 				</div>
+						<c:if test="${not empty error}">
+			<div class="error">${error}</div>
+		</c:if>
+		<c:if test="${not empty msg}">
+			<div class="msg">${msg}</div>
+		</c:if>
+
+		<form name='loginForm' action="<c:url value='j_spring_security_check' />" method='POST'>
 				<div class="col-md-12 col-sm-12 col-xs-12 user-login-box">
 					<div class="form-group">
-				  		<input type="text" class="form-control" placeholder="User Name" id="usr">
+				  		<input type="text" class="form-control" placeholder="User Name" id="uname" name="username">
 					</div>
 					<div class="form-group">
-				  		<input type="text" class="form-control" placeholder="Password" id="usr">
+				  		<input type="password" class="form-control" placeholder="Password" id="pw" name="password">
 					</div>
-					<a href="#" class="btn btn-defualt">Login</a>
+					<input type="submit" value="Login"/>
 				</div>
+				<input type="hidden" name="${_csrf.parameterName}"
+			value="${_csrf.token}" />
+				</form>
 				<div class="col-md-12 col-sm-12 col-xs-12 last-part">
 					<p>Not registered?<a href="#"> Create an account</a></p>
 				</div>

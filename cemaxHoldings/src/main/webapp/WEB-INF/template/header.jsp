@@ -8,6 +8,7 @@
 %>
 
 <body onload="startTime(),openNav()">
+<c:url value="/j_spring_security_logout" var="logoutUrl" />
 <div style="background: #ea985d;height:5px"></div>
 	<div style="height: 67px; width: 100%;background:  	#DCDCDC;"
 		class="col-md-12">
@@ -20,15 +21,31 @@
 		<%-- <img src="<c:url value="/resources/img/logo.png" />" --%>
 		<h1 style="float: left ;padding-bottom: 8px;padding-left:12px" >CEMAX Holdings (PVT).Ltd</h1>
 		
-
+			<form action="${logoutUrl}" method="post" id="logoutForm">
 		<div style="float: right">
 			<span id="span" class="col-md-1"
 				style="font-size: 20px; cursor: pointer; float: left; padding-left: 15px; padding-top: 12px">
-				<a href="/cemaxHoldings/" class="btn btn-warning">LOGOUT</a>
+				
+					  <input type="hidden" 
+						name="${_csrf.parameterName}"
+						value="${_csrf.token}" />
+						<button onclick="formSubmit()" class="btn btn-warning">Log out</button>
+					
 			</span>
 
 		</div>
+			</form>
+			
+			<script>
+		function formSubmit() {
+			document.getElementById("logoutForm").submit();
+		}
+		</script>
 
+	
+			
+			
+			
 		<div id="time"
 			style="float: right; font: serif; font-size: x-medium; padding-top: 15px;"></div>
 			
