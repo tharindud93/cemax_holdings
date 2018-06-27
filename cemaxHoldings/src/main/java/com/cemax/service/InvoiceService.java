@@ -15,5 +15,6 @@ public interface InvoiceService {
 	public void updateflag();
 	public List<Object[]> SumInvoicesByCustomer();
 	public List<Invoice> GetInvoiceByCustomer(String cusid);
-	int updateRemainAmount(long remain_amount,String invid);
+	int updateRemainAmount(long remain_amount,String invid,boolean paid);
+	public List<Invoice> paidAllInvoices();
 }

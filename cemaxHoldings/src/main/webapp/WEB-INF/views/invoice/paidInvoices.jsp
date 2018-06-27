@@ -36,7 +36,7 @@
 $(document).ready(function() {
  //   $( "#ajaxsearch" ).datepicker();
 	$('#ajaxsearch').autocomplete({		
-		serviceUrl: '${pageContext.request.contextPath}/getInvoices',
+		serviceUrl: '${pageContext.request.contextPath}/getpaidInvoices',
 		paramName: "invid",
 		delimiter: ",",
 		onSearchStart: function (query) {			
@@ -81,7 +81,7 @@ $(document).ready(function() {
 			          '<td>' + invoices[i]["value"][9] + '</td>' +
 			          '<td>' + (invoices[i]["value"][3]*invoices[i]["value"][4]+invoices[i]["value"][5]*invoices[i]["value"][6]) + '</td>' +
 			          '<td>' + invoices[i]["value"][7] + '</td>' +
-			          '<td>' + invoices[i]["value"][8] + '</td>' +
+
 					'<td>'+'<form action="viewinv">'+'<input type="text" hidden="true" value="'+ invoices[i]["value"][1]+'" name="id"/>'+
 						'<input type="submit" class="" value="View" />'+
 						'</form>'+'</td>'+
@@ -126,7 +126,7 @@ $(document).ready(function() {
 							<th scope="col">Customer name</th> 
 							<th scope="col">Value</th>
 							<th scope="col">Given Duration</th>
-							<th scope="col">Remain days</th>
+							
 							<th scope="col">Action</th>
 
 						</tr>
@@ -134,15 +134,7 @@ $(document).ready(function() {
 
 					<c:forEach var="invoice" items="${invoices}">
  					
- 					<c:if test="${invoice.remaindays<=14}">
-						<c:set var="colours" value="primary"></c:set>
-					</c:if>
-					<c:if test="${invoice.remaindays<7}">
-						<c:set var="colours" value="warning"></c:set>
-					</c:if>
-					<c:if test="${invoice.remaindays<0}">
-						<c:set var="colours" value="danger"></c:set>
-					</c:if> 
+ 
 					
 					
 						<tr class="${colours }">
@@ -152,7 +144,6 @@ $(document).ready(function() {
 					 	<td>${invoice.cname}</td> 
 						<td>${invoice.opcqun*invoice.opcup+invoice.ppcqun*invoice.ppcup}</td>
 						<td>${invoice.duration}</td>
-						<td>${invoice.remaindays}</td> 
 						<td><form action="viewinv"><input type="text" hidden="true" value="${invoice.invid}" name="id"/>
 						<input type="submit" class="" value="View" /></form></td>
 						</tr>

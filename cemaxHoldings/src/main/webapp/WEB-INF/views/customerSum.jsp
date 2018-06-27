@@ -36,23 +36,26 @@
 			<th>Issued Date</th>
 			<th>Remaining Days</th>
 			<th>Value</th>
+			<th>Remain</th>
 			
 		</tr>
 					<c:forEach var="invoice" items="${invoices}">
 
-						<c:set var="summ"
-							value="${summ+invoice.paid_amount+invoice.remain_amount}"></c:set>
+						<c:set var="summ" value="${summ+invoice.paid_amount+invoice.remain_amount}"></c:set>
+						<c:set var="remainsumm" value="${remainsumm+invoice.remain_amount}"></c:set>
 						<tr>
 							<td>${invoice.invid}</td>
 							<td>${invoice.date}</td>
 							<td>${invoice.remaindays}</td>
 							<td>${invoice.paid_amount+invoice.remain_amount}</td>
+							<td>${invoice.remain_amount}</td>
 						</tr>
 					</c:forEach>
 					<tr>
 								<td colspan="2"></td>
 								<td class="success">Total Amount</td>
 								<td>${summ}</td>
+								<td>${remainsumm}</td>
 								</tr>
 
 	</table>

@@ -42,7 +42,8 @@
 					<!-- <span style="font-size:16px;" class="pull-right hidden-xs showopacity"></span> --></a>
 					<ul class="dropdown-menu forAnimate" role="menu">
 					<li><a class="navbar-nav" href="/cemaxHoldings/invoice">Add Invoice</a></li>
-					<li><a class="navbar-nav" href="/cemaxHoldings/allinv">All Invoices</a></li>
+					<li><a class="navbar-nav" href="/cemaxHoldings/allinv">Outstanding Invoices</a></li>
+					<li><a class="navbar-nav" href="/cemaxHoldings/paidallinv">Paid Invoices</a></li>
 					</ul>
 					</li>
 			

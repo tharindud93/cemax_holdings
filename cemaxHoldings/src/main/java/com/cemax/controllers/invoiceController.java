@@ -85,6 +85,12 @@ public class invoiceController {
 		return new ModelAndView("/invoice/allinvoices","command",invoice);
 		
 	}
+	@RequestMapping("paidallinv")
+	public ModelAndView paidallinvoices(@ModelAttribute("invoice") Invoice invoice,Model model ) {
+		model.addAttribute("invoices",invoiceService.paidAllInvoices());
+		return new ModelAndView("/invoice/paidInvoices","command",invoice);
+		
+	}
 	 @RequestMapping(value = "/getInvoices", method = RequestMethod.GET)
 		public @ResponseBody
 		List<Invoice> getInvoises(@RequestParam String invid, HttpServletRequest request,HttpServletResponse response) {
@@ -101,6 +107,22 @@ public class invoiceController {
 			return result;
 		}
 	
+	 
+	 @RequestMapping(value = "/getpaidInvoices", method = RequestMethod.GET)
+		public @ResponseBody
+		List<Invoice> getpaidInvoises(@RequestParam String invid, HttpServletRequest request,HttpServletResponse response) {
+
+			List<Invoice> result = new ArrayList<Invoice>();
+			List<Invoice> data = invoiceService.paidAllInvoices();
+			
+			for (Invoice tag  : data) {
+				if (tag.getInvid().contains(invid)) {
+					result.add(tag);
+				}
+			}
+			
+			return result;
+		}
 	
 	@RequestMapping("viewinv")
 	public ModelAndView viewinvoice(HttpServletRequest request,Model model,Invoice invoice) {

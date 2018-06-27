@@ -44,7 +44,20 @@ public class InvoiceDaoImpl implements InvoiceDao{
 	public List<Invoice> AllInvoices() {
 		List<Invoice> invoices;
 		List<Invoice> invoices2 = new ArrayList();
-		invoices=entityManager.createQuery("select c from invoice c order by c.remaindays").getResultList();
+		invoices=entityManager.createQuery("select c from invoice c  where c.paid=false order by c.remaindays").getResultList();
+		for(Invoice tag:invoices) {
+			Customer cus=entityManager.find(Customer.class, tag.getCusid());
+			tag.setCname(cus.getCname());
+			invoices2.add(tag);
+		}
+		return invoices2;
+	}
+	
+	@Override
+	public List<Invoice> paidAllInvoices() {
+		List<Invoice> invoices;
+		List<Invoice> invoices2 = new ArrayList();
+		invoices=entityManager.createQuery("select c from invoice c  where c.paid=true order by c.remaindays").getResultList();
 		for(Invoice tag:invoices) {
 			Customer cus=entityManager.find(Customer.class, tag.getCusid());
 			tag.setCname(cus.getCname());
@@ -119,16 +132,18 @@ public class InvoiceDaoImpl implements InvoiceDao{
 
 	@Override
 	public List<Invoice> getInvoiceByCustomer(String cusid) {
-		String qlString = "SELECT x FROM invoice x where x.cusid=:id";
+		String qlString = "SELECT x FROM invoice x where x.cusid=:id and x.paid=false";
 		Query q = entityManager.createQuery(qlString);
 		List<Invoice> results =q.setParameter("id", cusid).getResultList() ;
 		return results;
 	}
 
 	@Override
-	public int updateRemainAmount(long remain_amount,String invid) {
+	public int updateRemainAmount(long remain_amount,String invid,boolean paid) {
 		Invoice invoice=entityManager.find(Invoice.class, invid);
+		invoice.setPaid_amount(invoice.getPaid_amount()+invoice.getRemain_amount()-remain_amount);
 		invoice.setRemain_amount(remain_amount);
+		invoice.setPaid(paid);
 		entityManager.merge(invoice);
 		return 1;
 	}

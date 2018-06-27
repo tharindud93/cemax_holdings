@@ -50,11 +50,11 @@ public class allcreditsController {
 		amount =amount-remain_amount;
 		if(amount>=0) {
 		System.out.println("amount iss"+amount);
-		invoiceservice.updateRemainAmount(0, invid);
+		invoiceservice.updateRemainAmount(0, invid,true);
 		i++;
 		}else {
 			System.out.println("amount iss"+amount);
-			invoiceservice.updateRemainAmount(amount*(-1), invid);
+			invoiceservice.updateRemainAmount(amount*(-1), invid,false);
 		}
 		}
 		return "redirect:customersum?cusid="+invoice.getCusid()+"&cname=Saman+kumara+Hardware";

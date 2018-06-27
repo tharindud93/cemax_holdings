@@ -74,8 +74,13 @@ public class InvoiceServiceImpl implements InvoiceService{
 	}
 
 	@Override
-	public int updateRemainAmount(long remain_amount,String invid) {
-		return invoiceDao.updateRemainAmount(remain_amount,invid);
+	public int updateRemainAmount(long remain_amount,String invid,boolean paid) {
+		return invoiceDao.updateRemainAmount(remain_amount,invid,paid);
+	}
+
+	@Override
+	public List<Invoice> paidAllInvoices() {
+		return invoiceDao.paidAllInvoices();
 	}
 	
 	
