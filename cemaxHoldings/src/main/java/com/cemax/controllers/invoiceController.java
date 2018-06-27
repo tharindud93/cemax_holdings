@@ -111,8 +111,8 @@ public class invoiceController {
 		//System.out.println(cus.getCname());
 		//model.addAttribute("cname",cus);
 		model.addAttribute("invoice",invoice);
-		DailyInventry inventry =inventryService.getinvbytoday();
-		model.addAttribute("inventry",inventry);
+		//DailyInventry inventry =inventryService.getinvbytoday();
+		//model.addAttribute("inventry",inventry);
 		return new ModelAndView("invoice/viewinvoice","command",invoice);
 	}
 	@RequestMapping("debauth")

@@ -69,15 +69,15 @@
 					<form:hidden path="time" value="${now}"></form:hidden>
 				<div class="col-md-6">
 						<label>Invoice No:</label>
-						<form:input type="text" class="form-control input-sm" name="invid" path="invid" ></form:input>
+						<form:input type="text" class="form-control input-sm" name="invid" path="invid" required="required" ></form:input>
 				</div>
 				<div class="col-md-6">
 						<label>Duration:</label>
-						<form:input type="text" class="form-control input-sm" name="invid" path="duration" ></form:input>
+						<form:input type="text" class="form-control input-sm" name="invid" path="duration" required="true"></form:input>
 				</div>
 				<div class="col-md-6">
 						<label>Customer Id:</label>
-						<form:input type="text" class="form-control input-sm" id="cusid" name="cusid" path="cusid" readonly="true"></form:input>
+						<form:input type="text" class="form-control input-sm" id="cusid" name="cusid" path="cusid" readonly="true" required="true"></form:input>
 						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#cusSearchModal">Get Customer</button>
 				</div>
 				<br> 
@@ -134,6 +134,21 @@
 							<td><button type="button" id="btntot" class="btn btn-success" style="float: right; width: 100%" onclick="total()">Total</button></td>
 							<td><input type="text" class="form-control input-sm" id="totl"/></td>
 						</tr>
+						<tr>
+						
+							<td colspan="2"></td>
+							<td>Paid</td>
+							<td></td>
+							<td><form:input type="text" class="form-control input-sm" id="paid" path="paid_amount"></form:input></td>
+						</tr>
+						<tr>
+						
+							<td colspan="2"></td>
+							<td>Remain Balence</td>
+							<td></td>
+							<td><form:input type="text" class="form-control input-sm" id="remain" path="remain_amount"></form:input></td>
+						</tr>
+		
 					</table>
 						
 				</div>
@@ -223,6 +238,10 @@ function total(){
 	var amount3=document.getElementById('amoun3').value*1;
 	
 	var total=document.getElementById('totl').value=amount1+amount2+amount3;
+	var paid=document.getElementById('paid').value;
+	var remain=document.getElementById('remain').value=total-paid;
+	
+	
 	//qunt1*unitp1=amount1;
 }
 </script>

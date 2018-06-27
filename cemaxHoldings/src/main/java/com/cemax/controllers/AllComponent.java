@@ -34,7 +34,7 @@ public class AllComponent {
 			
 		Iterable<Invoice> data = invoiceService.AllInvoices();
 		for (Invoice tag  : data) {
-			invoiceService.updateRemain(tag);
+			invoiceService.updateRemaindays(tag);
 			if(tag.getRemaindays()<=0) {
 				System.out.println("inactive come"+tag.getCusid());
 				customerService.inactiveCustomer(tag);

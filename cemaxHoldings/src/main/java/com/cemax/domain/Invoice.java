@@ -45,10 +45,18 @@ public class Invoice {
 	private String date;;
 	@Column
 	private String time;
+	@Column
+	private long paid_amount;
+	@Column
+	private long remain_amount;
 	@Transient 
 	private int opcremain;
 	@Transient 
 	private int ppcremain;
+	@Transient 
+	private String cname;
+	@Column
+	private boolean paid;
 
 	
 	public String getInvid() {
@@ -134,6 +142,30 @@ public class Invoice {
 	}
 	public void setRemaindays(int remaindays) {
 		this.remaindays = remaindays;
+	}
+	public long getPaid_amount() {
+		return paid_amount;
+	}
+	public void setPaid_amount(long paid_amount) {
+		this.paid_amount = paid_amount;
+	}
+	public long getRemain_amount() {
+		return remain_amount;
+	}
+	public void setRemain_amount(long remain_amount) {
+		this.remain_amount = remain_amount;
+	}
+	public String getCname() {
+		return cname;
+	}
+	public void setCname(String cname) {
+		this.cname = cname;
+	}
+	public boolean isPaid() {
+		return paid;
+	}
+	public void setPaid(boolean paid) {
+		this.paid = paid;
 	}
 
 }

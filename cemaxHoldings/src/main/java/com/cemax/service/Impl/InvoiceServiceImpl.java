@@ -47,7 +47,7 @@ public class InvoiceServiceImpl implements InvoiceService{
 	}
 
 	@Override
-	public int updateRemain(Invoice inv) {
+	public int updateRemaindays(Invoice inv) {
 		return invoiceDao.updateRemaindays(inv);
 	}
 
@@ -63,6 +63,20 @@ public class InvoiceServiceImpl implements InvoiceService{
 		
 	}
 
+	@Override
+	public List<Object[]> SumInvoicesByCustomer() {
+		return invoiceDao.SumInvoicesByCustomer();
+	}
+
+	@Override
+	public List<Invoice> GetInvoiceByCustomer(String cusid) {
+		return invoiceDao.getInvoiceByCustomer(cusid);
+	}
+
+	@Override
+	public int updateRemainAmount(long remain_amount,String invid) {
+		return invoiceDao.updateRemainAmount(remain_amount,invid);
+	}
 	
 	
 	

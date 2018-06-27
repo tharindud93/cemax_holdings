@@ -32,5 +32,10 @@ public class loginController {
 		return model;
 
 	}
+	
+	@RequestMapping(value="403",method=RequestMethod.GET)
+	public String denied() {
+		return "403";
+	}
 
 }

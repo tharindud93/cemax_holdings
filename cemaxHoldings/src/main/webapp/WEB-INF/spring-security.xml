@@ -6,7 +6,7 @@
 	http://www.springframework.org/schema/security
 	http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 
-	<http auto-config="true">
+		<http auto-config="true" >
 		<intercept-url pattern="/adduser**" access="ROLE_admin" />
 		<intercept-url pattern="/searchEdiuser**" access="ROLE_admin" />
 		
@@ -16,17 +16,19 @@
 			authentication-failure-url="/login?error" 
 			username-parameter="username"
 			password-parameter="password"
-			login-processing-url="/j_spring_security_check" />
+			login-processing-url="/j_spring_security_check" 
+			/>
+	<!-- 	<access-denied-handler error-page="/403" /> -->
 		<logout logout-success-url="/login?logout" />
 		<!-- enable csrf protection -->
-		<csrf/>
+<!-- 		<csrf/> -->
 	</http>
 
 	<authentication-manager>
 	  <authentication-provider>
 	    <user-service>
-		<user name="admin" password="123456" authorities="ROLE_USER" />
-		<user name="adminadmin" password="123456" authorities="ROLE_admin" />
+		<user name="user" password="123456" authorities="ROLE_USER" />
+		<user name="admin" password="123456" authorities="ROLE_admin" />
 	    </user-service>
 	  </authentication-provider>
 	</authentication-manager>

@@ -10,7 +10,10 @@ public interface InvoiceService {
 	public Invoice getInvById(String id);
 	public List<Invoice> todayInvoices();
 	public int updateRemain(int opcremain,int ppcremain);
-	public int updateRemain(Invoice inv);
+	public int updateRemaindays(Invoice inv);
 	public String getflag();
 	public void updateflag();
+	public List<Object[]> SumInvoicesByCustomer();
+	public List<Invoice> GetInvoiceByCustomer(String cusid);
+	int updateRemainAmount(long remain_amount,String invid);
 }

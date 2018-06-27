@@ -35,7 +35,7 @@
 		</div>
 		<div class=" col-md-5">
 		<label>Total Profit(Rs):</label>
-		<input type="text" class="form-control" value="120000">
+		<input type="text" class="form-control" value="">
 		</div></div>
 		</div>
 		

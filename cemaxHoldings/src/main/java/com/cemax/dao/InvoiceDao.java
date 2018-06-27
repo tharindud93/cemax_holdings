@@ -14,5 +14,8 @@ public interface InvoiceDao {
 	public int updateRemaindays(Invoice inv);
 	public String getflag();
 	public void updateflag();
+	public List<Object[]> SumInvoicesByCustomer();
+	public List<Invoice> getInvoiceByCustomer(String cusid);
+	int updateRemainAmount(long remain_amount, String invid);
 
 }

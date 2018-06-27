@@ -122,6 +122,7 @@ $(document).ready(function() {
 							<th scope="col">Date</th>
 							<th scope="col">Invoice No</th>
 							<th scope="col">Customer Id</th>
+							<th scope="col">Customer name</th> 
 							<th scope="col">Value</th>
 							<th scope="col">Given Duration</th>
 							<th scope="col">Remain days</th>
@@ -131,7 +132,8 @@ $(document).ready(function() {
 					</thead>
 
 					<c:forEach var="invoice" items="${invoices}">
-					<c:if test="${invoice.remaindays<=14}">
+ 					
+ 					<c:if test="${invoice.remaindays<=14}">
 						<c:set var="colours" value="primary"></c:set>
 					</c:if>
 					<c:if test="${invoice.remaindays<7}">
@@ -139,22 +141,23 @@ $(document).ready(function() {
 					</c:if>
 					<c:if test="${invoice.remaindays<0}">
 						<c:set var="colours" value="danger"></c:set>
-					</c:if>
+					</c:if> 
 					
 					
 						<tr class="${colours }">
-						<td>${invoice.date}</td>
+						 <td>${invoice.date}</td> 
 						<td>${invoice.invid}</td>
 						<td>${invoice.cusid}</td>
+					 	<td>${invoice.cname}</td> 
 						<td>${invoice.opcqun*invoice.opcup+invoice.ppcqun*invoice.ppcup}</td>
 						<td>${invoice.duration}</td>
-						<td>${invoice.remaindays}</td>
+						<td>${invoice.remaindays}</td> 
 						<td><form action="viewinv"><input type="text" hidden="true" value="${invoice.invid}" name="id"/>
 						<input type="submit" class="" value="View" /></form></td>
 						</tr>
 					</c:forEach> 
 					
-									</table>
+			</table>
 
 </div>
 </div>
