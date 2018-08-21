@@ -16,7 +16,7 @@ These are the Envronment variables,
 * SMTP_EMAIL=munasinghetd
 * SMTP_PASSWORD=d@n@1993
 * GOOGLE_BUCKET_JSON_PATH=/my-project-1479658436164-1022f2f72e7c.json
-      * This used in /resource/UserResource.java :inLines:240&262
+      
 
 * GOOGLE_BUCKET_NAME=optus-bucket
 * DB_UNAME=ROOT
