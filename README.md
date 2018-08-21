@@ -15,7 +15,7 @@ These are the Envronment variables,
 * DB_NAME=project_management
 * SMTP_EMAIL=munasinghetd
 * SMTP_PASSWORD=d@n@1993
-* GOOGLE_BUCKET_JSON_PATH=/home/dhananjaya/IdeaProjects/optus arimac/OPTUS/PM-api/src/main/java/com/arimac/projectManegement/security/my-project-1479658436164-1022f2f72e7c.json
+* GOOGLE_BUCKET_JSON_PATH=/my-project-1479658436164-1022f2f72e7c.json
 * GOOGLE_BUCKET_NAME=optus-bucket
 * DB_UNAME=ROOT
 * DB_PASS=
